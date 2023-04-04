@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreightTransportation", "FreightTransportation\FreightTransportation.csproj", "{E8EEC5E9-DF2D-4396-BD83-B4E1F5016D1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8EEC5E9-DF2D-4396-BD83-B4E1F5016D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EEC5E9-DF2D-4396-BD83-B4E1F5016D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EEC5E9-DF2D-4396-BD83-B4E1F5016D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EEC5E9-DF2D-4396-BD83-B4E1F5016D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BD661A7-EA4A-4845-9917-82E964FB80FA}
+	EndGlobalSection
+EndGlobal
