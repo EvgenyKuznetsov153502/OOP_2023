@@ -39,7 +39,7 @@
             this.AuthorizationLable = new System.Windows.Forms.Label();
             this.passField = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.loginField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -142,7 +142,7 @@
             this.panel1.Controls.Add(this.AuthorizationLable);
             this.panel1.Controls.Add(this.passField);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.loginField);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(35, 271);
@@ -181,21 +181,22 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // buttonLogin
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.button1.Location = new System.Drawing.Point(369, 317);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3);
-            this.button1.Size = new System.Drawing.Size(112, 41);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sing in";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.buttonLogin.Location = new System.Drawing.Point(369, 317);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonLogin.Size = new System.Drawing.Size(112, 41);
+            this.buttonLogin.TabIndex = 5;
+            this.buttonLogin.Text = "Sign in";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // loginField
             // 
@@ -261,7 +262,6 @@
             this.NameOfProgrem.TabIndex = 0;
             this.NameOfProgrem.Text = "Freight transportation\r\n";
             this.NameOfProgrem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.NameOfProgrem.Click += new System.EventHandler(this.label1_Click);
             this.NameOfProgrem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NameOfProgrem_MouseDown);
             this.NameOfProgrem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameOfProgrem_MouseMove);
             // 
@@ -297,7 +297,7 @@
         private System.Windows.Forms.TextBox loginField;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox passField;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label AuthorizationLable;
         private System.Windows.Forms.PictureBox pictureBox3;

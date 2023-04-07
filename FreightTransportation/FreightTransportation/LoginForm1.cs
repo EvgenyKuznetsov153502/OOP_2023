@@ -30,11 +30,7 @@ namespace FreightTransportation
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,6 +80,29 @@ namespace FreightTransportation
             lastPoint2 = new Point(e.X, e.Y);
         }
 
-        
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            String loginUser = loginField.Text;
+            String passwordUser = passField.Text;
+            Login login = new Login(loginUser, passwordUser);
+
+            if (login.SignIn())
+            {
+                MessageBox.Show("You are logged in");
+                loginField.BackColor = Color.White;
+                passField.BackColor = Color.White;
+
+            }
+            else
+            {
+                MessageBox.Show("Incorrect login or password");
+                loginField.BackColor = Color.IndianRed;
+                passField.BackColor = Color.IndianRed;
+            }
+               
+
+        }
+
+
     }
 }
