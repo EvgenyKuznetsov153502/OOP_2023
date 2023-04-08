@@ -44,7 +44,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
             this.SignUpCustbutton = new System.Windows.Forms.Button();
-            this.loginField = new System.Windows.Forms.TextBox();
+            this.Full_Name = new System.Windows.Forms.TextBox();
             this.titel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.MainPage.Controls.Add(this.BackButton);
             this.MainPage.Controls.Add(this.passField);
             this.MainPage.Controls.Add(this.SignUpCustbutton);
-            this.MainPage.Controls.Add(this.loginField);
+            this.MainPage.Controls.Add(this.Full_Name);
             this.MainPage.Controls.Add(this.titel);
             this.MainPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPage.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,10 +217,10 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.BackButton.Location = new System.Drawing.Point(24, 564);
+            this.BackButton.Location = new System.Drawing.Point(24, 565);
             this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(84, 33);
+            this.BackButton.Size = new System.Drawing.Size(90, 32);
             this.BackButton.TabIndex = 11;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -244,25 +244,26 @@
             this.SignUpCustbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpCustbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpCustbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpCustbutton.Location = new System.Drawing.Point(814, 564);
+            this.SignUpCustbutton.Location = new System.Drawing.Point(801, 565);
             this.SignUpCustbutton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpCustbutton.Name = "SignUpCustbutton";
             this.SignUpCustbutton.Padding = new System.Windows.Forms.Padding(2);
-            this.SignUpCustbutton.Size = new System.Drawing.Size(84, 33);
+            this.SignUpCustbutton.Size = new System.Drawing.Size(93, 32);
             this.SignUpCustbutton.TabIndex = 5;
             this.SignUpCustbutton.Text = "Sign Up";
             this.SignUpCustbutton.UseVisualStyleBackColor = true;
+            this.SignUpCustbutton.Click += new System.EventHandler(this.SignUpCustbutton_Click);
             // 
-            // loginField
+            // Full_Name
             // 
-            this.loginField.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginField.Location = new System.Drawing.Point(284, 141);
-            this.loginField.Margin = new System.Windows.Forms.Padding(2);
-            this.loginField.MaxLength = 40;
-            this.loginField.Multiline = true;
-            this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(312, 41);
-            this.loginField.TabIndex = 4;
+            this.Full_Name.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Full_Name.Location = new System.Drawing.Point(284, 141);
+            this.Full_Name.Margin = new System.Windows.Forms.Padding(2);
+            this.Full_Name.MaxLength = 40;
+            this.Full_Name.Multiline = true;
+            this.Full_Name.Name = "Full_Name";
+            this.Full_Name.Size = new System.Drawing.Size(312, 41);
+            this.Full_Name.TabIndex = 4;
             // 
             // titel
             // 
@@ -334,7 +335,7 @@
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.Button SignUpCustbutton;
-        private System.Windows.Forms.TextBox loginField;
+        private System.Windows.Forms.TextBox Full_Name;
         private System.Windows.Forms.Panel titel;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.PictureBox pictureBox4;

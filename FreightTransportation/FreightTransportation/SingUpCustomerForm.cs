@@ -68,5 +68,89 @@ namespace FreightTransportation
         {
             lastPoint2 = new Point(e.X, e.Y);
         }
+
+        private void SignUpCustbutton_Click(object sender, EventArgs e)
+        {
+            String name = Full_Name.Text;
+            String login = log.Text;
+            String password = passField.Text;
+            String repPassword = passRepField.Text;
+            String mail = Mail.Text;
+            String phone = tel.Text;
+            bool IsEmpty = true;
+
+            void CheckEmpty(TextBox field)
+            {
+                if(field.Text == string.Empty)
+                {
+                    IsEmpty = false;
+                    field.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    field.BackColor = Color.White;
+                }
+
+            }
+            CheckEmpty(Full_Name);
+            CheckEmpty(log);
+            CheckEmpty(passField);
+            CheckEmpty(passRepField);
+            CheckEmpty(Mail);
+            CheckEmpty(tel);
+
+            if (!IsEmpty)
+            {
+                MessageBox.Show("Fill in all the fields");
+                return;
+            }
+           
+
+            if(password != repPassword)
+            {
+                passField.BackColor = Color.IndianRed;
+                passRepField.BackColor = Color.IndianRed;
+                passField.Text = string.Empty;
+                passRepField.Text = string.Empty;
+                MessageBox.Show("Passwords in the fields are different");
+                return;
+            }
+            else
+            {
+                passField.BackColor = Color.White;
+                passRepField.BackColor = Color.White;
+            }
+
+            Registration registration = new Registration(login, password, name, mail, phone);
+
+            if (registration.IsUserExists())
+            {
+                log.BackColor = Color.IndianRed;
+                MessageBox.Show("This login already exists, please enter another one");
+                return;
+            }
+            else
+            {
+                log.BackColor= Color.White;
+            }
+
+
+            if (registration.SignUpAsCustomer())
+            {
+                Full_Name.Text = string.Empty;
+                log.Text = string.Empty;
+                passField.Text= string.Empty;
+                passRepField.Text= string.Empty;
+                Mail.Text = string.Empty;
+                tel.Text = string.Empty;
+                MessageBox.Show("Account created successfully");
+            }
+               
+
+            else
+                MessageBox.Show("Error! Account not created");
+
+
+        }
     }
 }
