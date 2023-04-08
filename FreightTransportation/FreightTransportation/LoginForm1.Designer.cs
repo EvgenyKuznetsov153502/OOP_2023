@@ -66,8 +66,9 @@
             this.MainPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPage.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainPage.Location = new System.Drawing.Point(0, 0);
+            this.MainPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MainPage.Name = "MainPage";
-            this.MainPage.Size = new System.Drawing.Size(1227, 797);
+            this.MainPage.Size = new System.Drawing.Size(920, 648);
             this.MainPage.TabIndex = 0;
             this.MainPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
@@ -81,9 +82,10 @@
             this.SignUpAsEmplButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpAsEmplButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.SignUpAsEmplButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpAsEmplButton.Location = new System.Drawing.Point(908, 646);
+            this.SignUpAsEmplButton.Location = new System.Drawing.Point(681, 525);
+            this.SignUpAsEmplButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignUpAsEmplButton.Name = "SignUpAsEmplButton";
-            this.SignUpAsEmplButton.Size = new System.Drawing.Size(255, 55);
+            this.SignUpAsEmplButton.Size = new System.Drawing.Size(191, 45);
             this.SignUpAsEmplButton.TabIndex = 11;
             this.SignUpAsEmplButton.Text = "Sign Up As An Employee";
             this.SignUpAsEmplButton.UseVisualStyleBackColor = true;
@@ -96,9 +98,10 @@
             this.SignUpAsСustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpAsСustomer.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.SignUpAsСustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpAsСustomer.Location = new System.Drawing.Point(640, 646);
+            this.SignUpAsСustomer.Location = new System.Drawing.Point(480, 525);
+            this.SignUpAsСustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignUpAsСustomer.Name = "SignUpAsСustomer";
-            this.SignUpAsСustomer.Size = new System.Drawing.Size(249, 55);
+            this.SignUpAsСustomer.Size = new System.Drawing.Size(187, 45);
             this.SignUpAsСustomer.TabIndex = 10;
             this.SignUpAsСustomer.Text = "Sign Up As A Сustomer";
             this.SignUpAsСustomer.UseVisualStyleBackColor = true;
@@ -108,9 +111,10 @@
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Nirmala UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.WelcomeLabel.Location = new System.Drawing.Point(783, 415);
+            this.WelcomeLabel.Location = new System.Drawing.Point(587, 337);
+            this.WelcomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(225, 59);
+            this.WelcomeLabel.Size = new System.Drawing.Size(183, 47);
             this.WelcomeLabel.TabIndex = 9;
             this.WelcomeLabel.Text = "Welcome!";
             // 
@@ -118,9 +122,10 @@
             // 
             this.Info.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.Info.Location = new System.Drawing.Point(633, 489);
+            this.Info.Location = new System.Drawing.Point(475, 397);
+            this.Info.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(526, 154);
+            this.Info.Size = new System.Drawing.Size(394, 125);
             this.Info.TabIndex = 8;
             this.Info.Text = "If you do not have an account in the application, you can sign up as a customer o" +
     "r as an employee\r\n\r\n\r\n\r\n";
@@ -128,16 +133,17 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(738, 154);
+            this.pictureBox3.Location = new System.Drawing.Point(554, 125);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(302, 238);
+            this.pictureBox3.Size = new System.Drawing.Size(226, 193);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AuthorizationLable);
             this.panel1.Controls.Add(this.passField);
@@ -145,9 +151,10 @@
             this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.loginField);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(35, 271);
+            this.panel1.Location = new System.Drawing.Point(26, 220);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 386);
+            this.panel1.Size = new System.Drawing.Size(394, 314);
             this.panel1.TabIndex = 6;
             // 
             // AuthorizationLable
@@ -155,28 +162,31 @@
             this.AuthorizationLable.AutoSize = true;
             this.AuthorizationLable.Font = new System.Drawing.Font("Nirmala UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AuthorizationLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.AuthorizationLable.Location = new System.Drawing.Point(47, 46);
+            this.AuthorizationLable.Location = new System.Drawing.Point(35, 37);
+            this.AuthorizationLable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AuthorizationLable.Name = "AuthorizationLable";
-            this.AuthorizationLable.Size = new System.Drawing.Size(273, 50);
+            this.AuthorizationLable.Size = new System.Drawing.Size(221, 41);
             this.AuthorizationLable.TabIndex = 6;
             this.AuthorizationLable.Text = "Authorization:";
             // 
             // passField
             // 
             this.passField.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passField.Location = new System.Drawing.Point(134, 231);
+            this.passField.Location = new System.Drawing.Point(100, 188);
+            this.passField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passField.MaxLength = 18;
             this.passField.Name = "passField";
-            this.passField.Size = new System.Drawing.Size(347, 43);
+            this.passField.Size = new System.Drawing.Size(261, 36);
             this.passField.TabIndex = 2;
             this.passField.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(56, 231);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 188);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -189,10 +199,11 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.buttonLogin.Location = new System.Drawing.Point(369, 317);
+            this.buttonLogin.Location = new System.Drawing.Point(277, 258);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.buttonLogin.Size = new System.Drawing.Size(112, 41);
+            this.buttonLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Size = new System.Drawing.Size(84, 33);
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Sign in";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -201,19 +212,21 @@
             // loginField
             // 
             this.loginField.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginField.Location = new System.Drawing.Point(134, 134);
+            this.loginField.Location = new System.Drawing.Point(100, 109);
+            this.loginField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginField.MaxLength = 18;
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(347, 50);
+            this.loginField.Size = new System.Drawing.Size(261, 41);
             this.loginField.TabIndex = 4;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(56, 134);
+            this.pictureBox2.Location = new System.Drawing.Point(42, 109);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.Size = new System.Drawing.Size(45, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -225,8 +238,9 @@
             this.panel2.Controls.Add(this.NameOfProgrem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1227, 148);
+            this.panel2.Size = new System.Drawing.Size(920, 120);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -238,9 +252,10 @@
             this.closeButton.Font = new System.Drawing.Font("High Tower Text", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.closeButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.closeButton.Location = new System.Drawing.Point(1192, 0);
+            this.closeButton.Location = new System.Drawing.Point(891, 0);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(35, 32);
+            this.closeButton.Size = new System.Drawing.Size(29, 26);
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "X";
             this.closeButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -250,15 +265,16 @@
             // 
             // NameOfProgrem
             // 
-            this.NameOfProgrem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.NameOfProgrem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(62)))), ((int)(((byte)(69)))));
             this.NameOfProgrem.Cursor = System.Windows.Forms.Cursors.Default;
             this.NameOfProgrem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameOfProgrem.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameOfProgrem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.NameOfProgrem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NameOfProgrem.Location = new System.Drawing.Point(0, 0);
+            this.NameOfProgrem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NameOfProgrem.Name = "NameOfProgrem";
-            this.NameOfProgrem.Size = new System.Drawing.Size(1227, 148);
+            this.NameOfProgrem.Size = new System.Drawing.Size(920, 120);
             this.NameOfProgrem.TabIndex = 0;
             this.NameOfProgrem.Text = "Freight transportation\r\n";
             this.NameOfProgrem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -267,11 +283,12 @@
             // 
             // LoginForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 797);
+            this.ClientSize = new System.Drawing.Size(920, 648);
             this.Controls.Add(this.MainPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginForm1";
             this.Text = "LoginForm1";
             this.MainPage.ResumeLayout(false);
@@ -298,12 +315,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AuthorizationLable;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button SignUpAsСustomer;
+        private System.Windows.Forms.Button SignUpAsEmplButton;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label Info;
-        private System.Windows.Forms.Button SignUpAsEmplButton;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label AuthorizationLable;
     }
 }
