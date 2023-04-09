@@ -24,7 +24,7 @@ namespace FreightTransportation
        
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -48,6 +48,7 @@ namespace FreightTransportation
 
             }
         }
+
 
         private void MainPage_MouseDown(object sender, MouseEventArgs e)
         {
@@ -145,12 +146,19 @@ namespace FreightTransportation
                 tel.Text = string.Empty;
                 MessageBox.Show("Account created successfully");
             }
-               
-
             else
                 MessageBox.Show("Error! Account not created");
 
 
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm1 log_form = new LoginForm1();
+            log_form.Show();
+        }
+
+        
     }
 }

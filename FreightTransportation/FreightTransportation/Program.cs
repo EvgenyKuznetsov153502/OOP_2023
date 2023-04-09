@@ -16,7 +16,7 @@ namespace FreightTransportation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SingUpCustomerForm()
+            Application.Run(new LoginForm1()
                 );
         }
     }

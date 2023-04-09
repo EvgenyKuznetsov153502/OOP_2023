@@ -33,7 +33,7 @@ namespace FreightTransportation
        
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -88,21 +88,36 @@ namespace FreightTransportation
 
             if (login.SignIn())
             {
-                MessageBox.Show("You are logged in");
+                
                 loginField.BackColor = Color.White;
                 passField.BackColor = Color.White;
+                MessageBox.Show("You are logged in");
 
             }
             else
             {
-                MessageBox.Show("Incorrect login or password");
+                
                 loginField.BackColor = Color.IndianRed;
                 passField.BackColor = Color.IndianRed;
+                MessageBox.Show("Incorrect login or password");
             }
                
 
         }
 
+        private void SignUpAsСustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SingUpCustomerForm customerForm = new SingUpCustomerForm();
+            customerForm.Show();
 
+        }
+
+        private void SignUpAsEmplButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SignUpEmployeeForm employeeForm = new SignUpEmployeeForm();
+            employeeForm.Show();
+        }
     }
 }
