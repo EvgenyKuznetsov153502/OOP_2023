@@ -38,27 +38,7 @@ namespace FreightTransportation
         
         public bool SignUpAsCustomer()
         {
-            string UserType = "customer";
-            bool IsCreated = false;
-            DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `full_name`, `telephone`, `email`, `user_type`) VALUES (@login, @pass, @name, @tel, @em, @usType)", db.GetConnection());
-
-            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = Login;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = Password;
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = FullName;
-            command.Parameters.Add("@tel",MySqlDbType.VarChar).Value = Telephone;
-            command.Parameters.Add("@em",MySqlDbType.VarChar).Value = Email;
-            command.Parameters.Add("@usType", MySqlDbType.VarChar).Value = UserType;
-
-            db.OpenConnection();
-
-            if (command.ExecuteNonQuery() == 1) // returns true if the account was created
-                IsCreated= true;
- 
-            db.CloseConnection();
-
-            return IsCreated;
-
+            return SignUp("customer");
         }
 
         public bool IsUserExists()
@@ -77,8 +57,38 @@ namespace FreightTransportation
                 return true;
             else
                 return false;
+        }
+
+        public bool SignUpAsEmployee()
+        {
+            return SignUp("employee");
+        }
+
+        private bool SignUp(string UserType)
+        {
+            bool IsCreated = false;
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `full_name`, `telephone`, `email`, `user_type`) VALUES (@login, @pass, @name, @tel, @em, @usType)", db.GetConnection());
+
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = Login;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = Password;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = FullName;
+            command.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telephone;
+            command.Parameters.Add("@em", MySqlDbType.VarChar).Value = Email;
+            command.Parameters.Add("@usType", MySqlDbType.VarChar).Value = UserType;
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1) // returns true if the account was created
+                IsCreated = true;
+
+            db.CloseConnection();
+
+            return IsCreated;
 
         }
+
+
 
 
 

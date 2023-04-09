@@ -297,6 +297,7 @@
             this.SignUpEmplButton.TabIndex = 5;
             this.SignUpEmplButton.Text = "Sign Up";
             this.SignUpEmplButton.UseVisualStyleBackColor = true;
+            this.SignUpEmplButton.Click += new System.EventHandler(this.SignUpEmplButton_Click);
             // 
             // Full_Name
             // 
