@@ -91,8 +91,9 @@ namespace FreightTransportation
                 
                 loginField.BackColor = Color.White;
                 passField.BackColor = Color.White;
-                MessageBox.Show("You are logged in");
-
+                this.Hide();
+                CustomerMainPage customerPage = new CustomerMainPage(loginUser);
+                customerPage.Show();
             }
             else
             {

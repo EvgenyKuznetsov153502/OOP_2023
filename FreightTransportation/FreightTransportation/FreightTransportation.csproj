@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMainPage.Designer.cs">
+      <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
     <Compile Include="LoginForm1.cs">
@@ -74,6 +80,9 @@
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkWithDB\UniqueCode.cs" />
+    <EmbeddedResource Include="CustomerMainPage.resx">
+      <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.cs</DependentUpon>
     </EmbeddedResource>

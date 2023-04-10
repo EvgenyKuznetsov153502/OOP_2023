@@ -145,6 +145,9 @@ namespace FreightTransportation
                 Mail.Text = string.Empty;
                 tel.Text = string.Empty;
                 MessageBox.Show("Account created successfully");
+                this.Hide();
+                CustomerMainPage customerPage = new CustomerMainPage(login);
+                customerPage.Show();
             }
             else
                 MessageBox.Show("Error! Account not created");

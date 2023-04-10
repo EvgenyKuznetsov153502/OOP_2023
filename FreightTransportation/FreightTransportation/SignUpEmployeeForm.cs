@@ -74,7 +74,7 @@ namespace FreightTransportation
 
         private void SignUpEmplButton_Click(object sender, EventArgs e)
         {
-            String AdminPassword = "Admin";
+           
             String name = Full_Name.Text;
             String login = log.Text;
             String password = passField.Text;
@@ -141,6 +141,7 @@ namespace FreightTransportation
             }
 
             UniqueCode uniqueCode= new UniqueCode(UCode);
+            String AdminPassword = uniqueCode.GetAdminCode();
 
             if (uniqueCode.IsCodeExists() || UCode == AdminPassword)
             {

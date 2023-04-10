@@ -11,9 +11,15 @@ namespace FreightTransportation.WorkWithDB
     internal class UniqueCode
     {
         private string Code;
+        private string AdminCode = "Admin";
 
         public UniqueCode() { Code = string.Empty; }
         public UniqueCode(string code) { this.Code = code;}
+
+        public string GetAdminCode()
+        {
+            return AdminCode;
+        }
 
         public bool IsCodeExists()
         {
