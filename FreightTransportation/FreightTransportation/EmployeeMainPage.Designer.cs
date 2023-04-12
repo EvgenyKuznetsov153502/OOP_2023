@@ -101,6 +101,7 @@
             this.routesButton.TabIndex = 17;
             this.routesButton.Text = "Routes";
             this.routesButton.UseVisualStyleBackColor = true;
+            this.routesButton.Click += new System.EventHandler(this.routesButton_Click);
             // 
             // customersButton
             // 

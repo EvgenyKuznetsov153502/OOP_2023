@@ -62,6 +62,12 @@
     <Compile Include="EmployeeMainPage.Designer.cs">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoutesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutesForm.Designer.cs">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
     <Compile Include="LoginForm1.cs">
@@ -85,6 +91,7 @@
     <Compile Include="SingUpCustomerForm.Designer.cs">
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Route.cs" />
     <Compile Include="WorkWithDB\UniqueCode.cs" />
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
@@ -99,6 +106,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoutesForm.resx">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpEmployeeForm.resx">
       <DependentUpon>SignUpEmployeeForm.cs</DependentUpon>

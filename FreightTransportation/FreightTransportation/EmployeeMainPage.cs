@@ -71,5 +71,12 @@ namespace FreightTransportation
             LoginForm1 log_form = new LoginForm1();
             log_form.Show();
         }
+
+        private void routesButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoutesForm routesForm = new RoutesForm(UserName);
+            routesForm.Show();
+        }
     }
 }
