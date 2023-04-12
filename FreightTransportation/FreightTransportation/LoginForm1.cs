@@ -20,16 +20,6 @@ namespace FreightTransportation
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
        
         private void closeButton_Click(object sender, EventArgs e)
         {
@@ -91,13 +81,21 @@ namespace FreightTransportation
                 
                 loginField.BackColor = Color.White;
                 passField.BackColor = Color.White;
-                this.Hide();
-                CustomerMainPage customerPage = new CustomerMainPage(loginUser);
-                customerPage.Show();
+                if (login.IsCustomer())
+                {
+                    this.Hide();
+                    CustomerMainPage customerMainPage = new CustomerMainPage(loginUser);
+                    customerMainPage.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    EmployeeMainPage employeeMainPage = new EmployeeMainPage(loginUser);
+                    employeeMainPage.Show();
+                }   
             }
             else
             {
-                
                 loginField.BackColor = Color.IndianRed;
                 passField.BackColor = Color.IndianRed;
                 MessageBox.Show("Incorrect login or password");

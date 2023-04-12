@@ -151,8 +151,6 @@ namespace FreightTransportation
             }
             else
                 MessageBox.Show("Error! Account not created");
-
-
         }
 
         private void BackButton_Click(object sender, EventArgs e)

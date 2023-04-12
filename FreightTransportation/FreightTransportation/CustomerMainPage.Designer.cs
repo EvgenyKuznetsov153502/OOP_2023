@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMainPage));
             this.titel = new System.Windows.Forms.Panel();
-            this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserNameText = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.Label();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SignUpCustbutton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,16 +59,26 @@
             this.titel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titel_MouseDown);
             this.titel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titel_MouseMove);
             // 
-            // WelcomeLabel
+            // UserNameText
             // 
-            this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Font = new System.Drawing.Font("Stencil", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.WelcomeLabel.Location = new System.Drawing.Point(281, 32);
-            this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(663, 68);
-            this.WelcomeLabel.TabIndex = 9;
-            this.WelcomeLabel.Text = "Customer home page";
+            this.UserNameText.AutoSize = true;
+            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.UserNameText.Location = new System.Drawing.Point(63, 100);
+            this.UserNameText.Name = "UserNameText";
+            this.UserNameText.Size = new System.Drawing.Size(102, 38);
+            this.UserNameText.TabIndex = 15;
+            this.UserNameText.Text = "LOGIN";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // closeButton
             // 
@@ -88,26 +98,16 @@
             this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
             this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
-            // pictureBox1
+            // WelcomeLabel
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // UserNameText
-            // 
-            this.UserNameText.AutoSize = true;
-            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.UserNameText.Location = new System.Drawing.Point(63, 100);
-            this.UserNameText.Name = "UserNameText";
-            this.UserNameText.Size = new System.Drawing.Size(102, 38);
-            this.UserNameText.TabIndex = 15;
-            this.UserNameText.Text = "LOGIN";
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Font = new System.Drawing.Font("Stencil", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.WelcomeLabel.Location = new System.Drawing.Point(281, 32);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(663, 68);
+            this.WelcomeLabel.TabIndex = 9;
+            this.WelcomeLabel.Text = "Customer home page";
             // 
             // SignUpCustbutton
             // 
@@ -117,7 +117,7 @@
             this.SignUpCustbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpCustbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpCustbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpCustbutton.Location = new System.Drawing.Point(21, 574);
+            this.SignUpCustbutton.Location = new System.Drawing.Point(1079, 163);
             this.SignUpCustbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SignUpCustbutton.Name = "SignUpCustbutton";
             this.SignUpCustbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -134,10 +134,10 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.BackButton.Location = new System.Drawing.Point(21, 700);
+            this.BackButton.Location = new System.Drawing.Point(1079, 290);
             this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(120, 39);
+            this.BackButton.Size = new System.Drawing.Size(124, 39);
             this.BackButton.TabIndex = 11;
             this.BackButton.Text = "Exit";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.button1.Location = new System.Drawing.Point(21, 636);
+            this.button1.Location = new System.Drawing.Point(1079, 225);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -172,7 +172,7 @@
             this.MainPage.Location = new System.Drawing.Point(0, 0);
             this.MainPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPage.Name = "MainPage";
-            this.MainPage.Size = new System.Drawing.Size(1215, 757);
+            this.MainPage.Size = new System.Drawing.Size(1215, 787);
             this.MainPage.TabIndex = 2;
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 757);
+            this.ClientSize = new System.Drawing.Size(1215, 787);
             this.Controls.Add(this.MainPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerMainPage";

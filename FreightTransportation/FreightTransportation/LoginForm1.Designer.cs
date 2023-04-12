@@ -70,7 +70,6 @@
             this.MainPage.Name = "MainPage";
             this.MainPage.Size = new System.Drawing.Size(1227, 798);
             this.MainPage.TabIndex = 0;
-            this.MainPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
             // 
@@ -241,7 +240,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1227, 148);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // closeButton
             // 
