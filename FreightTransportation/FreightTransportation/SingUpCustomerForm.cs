@@ -93,6 +93,7 @@ namespace FreightTransportation
                 }
 
             }
+
             CheckEmpty(Full_Name);
             CheckEmpty(log);
             CheckEmpty(passField);

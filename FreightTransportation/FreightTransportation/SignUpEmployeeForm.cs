@@ -176,9 +176,6 @@ namespace FreightTransportation
                 MessageBox.Show("Error! Account not created");
             }
 
-           
-
-
 
         }
     }

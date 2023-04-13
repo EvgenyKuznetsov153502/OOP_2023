@@ -28,28 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoutesForm));
             this.MainPage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PriceField = new System.Windows.Forms.TextBox();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.PaymentField = new System.Windows.Forms.TextBox();
+            this.PaymentLabel = new System.Windows.Forms.Label();
+            this.DistanceField = new System.Windows.Forms.TextBox();
+            this.DistanceLabel = new System.Windows.Forms.Label();
+            this.NameField = new System.Windows.Forms.TextBox();
+            this.AddRouteLable = new System.Windows.Forms.Label();
+            this.RoutNameLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
             this.Loadbutton = new System.Windows.Forms.Button();
             this.titel = new System.Windows.Forms.Panel();
             this.UserNameText = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PanelForDeleting = new System.Windows.Forms.Panel();
+            this.DeleteLabal = new System.Windows.Forms.Label();
+            this.DeleteBox = new System.Windows.Forms.TextBox();
+            this.IDlabel = new System.Windows.Forms.Label();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.MainPage.SuspendLayout();
-            this.titel.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.titel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelForDeleting.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.MainPage.Controls.Add(this.PanelForDeleting);
+            this.MainPage.Controls.Add(this.panel1);
             this.MainPage.Controls.Add(this.dataGridView1);
-            this.MainPage.Controls.Add(this.button1);
             this.MainPage.Controls.Add(this.BackButton);
             this.MainPage.Controls.Add(this.Loadbutton);
             this.MainPage.Controls.Add(this.titel);
@@ -63,22 +82,158 @@
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
             // 
-            // button1
+            // panel1
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.button1.Location = new System.Drawing.Point(528, 654);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Size = new System.Drawing.Size(124, 39);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "History";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.panel1.Controls.Add(this.PriceField);
+            this.panel1.Controls.Add(this.PriceLabel);
+            this.panel1.Controls.Add(this.AddButton);
+            this.panel1.Controls.Add(this.PaymentField);
+            this.panel1.Controls.Add(this.PaymentLabel);
+            this.panel1.Controls.Add(this.DistanceField);
+            this.panel1.Controls.Add(this.DistanceLabel);
+            this.panel1.Controls.Add(this.NameField);
+            this.panel1.Controls.Add(this.AddRouteLable);
+            this.panel1.Controls.Add(this.RoutNameLabel);
+            this.panel1.Location = new System.Drawing.Point(24, 225);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(401, 387);
+            this.panel1.TabIndex = 14;
+            // 
+            // PriceField
+            // 
+            this.PriceField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceField.Location = new System.Drawing.Point(115, 271);
+            this.PriceField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PriceField.MaxLength = 6;
+            this.PriceField.Multiline = true;
+            this.PriceField.Name = "PriceField";
+            this.PriceField.Size = new System.Drawing.Size(268, 39);
+            this.PriceField.TabIndex = 22;
+            this.PriceField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceField_KeyPress);
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.PriceLabel.Location = new System.Drawing.Point(36, 271);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(73, 31);
+            this.PriceLabel.TabIndex = 21;
+            this.PriceLabel.Text = "Price:";
+            // 
+            // AddButton
+            // 
+            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.AddButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.AddButton.Location = new System.Drawing.Point(288, 331);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddButton.Size = new System.Drawing.Size(95, 39);
+            this.AddButton.TabIndex = 12;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // PaymentField
+            // 
+            this.PaymentField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentField.Location = new System.Drawing.Point(115, 206);
+            this.PaymentField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PaymentField.MaxLength = 6;
+            this.PaymentField.Multiline = true;
+            this.PaymentField.Name = "PaymentField";
+            this.PaymentField.Size = new System.Drawing.Size(268, 39);
+            this.PaymentField.TabIndex = 20;
+            this.PaymentField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PaymentField_KeyPress);
+            // 
+            // PaymentLabel
+            // 
+            this.PaymentLabel.AutoSize = true;
+            this.PaymentLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.PaymentLabel.Location = new System.Drawing.Point(-3, 209);
+            this.PaymentLabel.Name = "PaymentLabel";
+            this.PaymentLabel.Size = new System.Drawing.Size(113, 31);
+            this.PaymentLabel.TabIndex = 19;
+            this.PaymentLabel.Text = "Payment:";
+            // 
+            // DistanceField
+            // 
+            this.DistanceField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceField.Location = new System.Drawing.Point(115, 146);
+            this.DistanceField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DistanceField.MaxLength = 5;
+            this.DistanceField.Multiline = true;
+            this.DistanceField.Name = "DistanceField";
+            this.DistanceField.Size = new System.Drawing.Size(268, 39);
+            this.DistanceField.TabIndex = 18;
+            this.DistanceField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DistanceField_KeyPress);
+            // 
+            // DistanceLabel
+            // 
+            this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.DistanceLabel.Location = new System.Drawing.Point(-3, 149);
+            this.DistanceLabel.Name = "DistanceLabel";
+            this.DistanceLabel.Size = new System.Drawing.Size(112, 31);
+            this.DistanceLabel.TabIndex = 17;
+            this.DistanceLabel.Text = "Distance:";
+            // 
+            // NameField
+            // 
+            this.NameField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameField.Location = new System.Drawing.Point(115, 85);
+            this.NameField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NameField.MaxLength = 30;
+            this.NameField.Multiline = true;
+            this.NameField.Name = "NameField";
+            this.NameField.Size = new System.Drawing.Size(268, 39);
+            this.NameField.TabIndex = 16;
+            // 
+            // AddRouteLable
+            // 
+            this.AddRouteLable.AutoSize = true;
+            this.AddRouteLable.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddRouteLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.AddRouteLable.Location = new System.Drawing.Point(119, 20);
+            this.AddRouteLable.Name = "AddRouteLable";
+            this.AddRouteLable.Size = new System.Drawing.Size(153, 41);
+            this.AddRouteLable.TabIndex = 15;
+            this.AddRouteLable.Text = "Add rout:";
+            // 
+            // RoutNameLabel
+            // 
+            this.RoutNameLabel.AutoSize = true;
+            this.RoutNameLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoutNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.RoutNameLabel.Location = new System.Drawing.Point(28, 85);
+            this.RoutNameLabel.Name = "RoutNameLabel";
+            this.RoutNameLabel.Size = new System.Drawing.Size(83, 31);
+            this.RoutNameLabel.TabIndex = 15;
+            this.RoutNameLabel.Text = "Name:";
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(456, 173);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(769, 460);
+            this.dataGridView1.TabIndex = 13;
             // 
             // BackButton
             // 
@@ -105,7 +260,7 @@
             this.Loadbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Loadbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loadbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.Loadbutton.Location = new System.Drawing.Point(368, 654);
+            this.Loadbutton.Location = new System.Drawing.Point(1115, 734);
             this.Loadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Loadbutton.Name = "Loadbutton";
             this.Loadbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,6 +297,16 @@
             this.UserNameText.TabIndex = 15;
             this.UserNameText.Text = "LOGIN";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // closeButton
             // 
             this.closeButton.AutoSize = true;
@@ -171,26 +336,69 @@
             this.WelcomeLabel.TabIndex = 9;
             this.WelcomeLabel.Text = "Routes";
             // 
-            // dataGridView1
+            // PanelForDeleting
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(368, 173);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(857, 453);
-            this.dataGridView1.TabIndex = 13;
+            this.PanelForDeleting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.PanelForDeleting.Controls.Add(this.DeleteButton);
+            this.PanelForDeleting.Controls.Add(this.DeleteBox);
+            this.PanelForDeleting.Controls.Add(this.DeleteLabal);
+            this.PanelForDeleting.Controls.Add(this.IDlabel);
+            this.PanelForDeleting.Location = new System.Drawing.Point(414, 652);
+            this.PanelForDeleting.Name = "PanelForDeleting";
+            this.PanelForDeleting.Size = new System.Drawing.Size(416, 108);
+            this.PanelForDeleting.TabIndex = 15;
             // 
-            // pictureBox1
+            // DeleteLabal
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.DeleteLabal.AutoSize = true;
+            this.DeleteLabal.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteLabal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DeleteLabal.Location = new System.Drawing.Point(88, 0);
+            this.DeleteLabal.Name = "DeleteLabal";
+            this.DeleteLabal.Size = new System.Drawing.Size(201, 41);
+            this.DeleteLabal.TabIndex = 16;
+            this.DeleteLabal.Text = "Delete route:";
+            // 
+            // DeleteBox
+            // 
+            this.DeleteBox.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBox.Location = new System.Drawing.Point(101, 56);
+            this.DeleteBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DeleteBox.MaxLength = 6;
+            this.DeleteBox.Multiline = true;
+            this.DeleteBox.Name = "DeleteBox";
+            this.DeleteBox.Size = new System.Drawing.Size(165, 39);
+            this.DeleteBox.TabIndex = 21;
+            this.DeleteBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DeleteBox_KeyPress);
+            // 
+            // IDlabel
+            // 
+            this.IDlabel.AutoSize = true;
+            this.IDlabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDlabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.IDlabel.Location = new System.Drawing.Point(51, 59);
+            this.IDlabel.Name = "IDlabel";
+            this.IDlabel.Size = new System.Drawing.Size(44, 31);
+            this.IDlabel.TabIndex = 22;
+            this.IDlabel.Text = "ID:";
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.DeleteButton.Location = new System.Drawing.Point(293, 56);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DeleteButton.Size = new System.Drawing.Size(102, 39);
+            this.DeleteButton.TabIndex = 16;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // RoutesForm
             // 
@@ -203,10 +411,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoutesForm";
             this.MainPage.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.titel.ResumeLayout(false);
             this.titel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PanelForDeleting.ResumeLayout(false);
+            this.PanelForDeleting.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -214,7 +426,7 @@
         #endregion
 
         private System.Windows.Forms.Panel MainPage;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button Loadbutton;
         private System.Windows.Forms.Panel titel;
@@ -223,5 +435,20 @@
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label RoutNameLabel;
+        private System.Windows.Forms.Label AddRouteLable;
+        private System.Windows.Forms.TextBox PriceField;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.TextBox PaymentField;
+        private System.Windows.Forms.Label PaymentLabel;
+        private System.Windows.Forms.TextBox DistanceField;
+        private System.Windows.Forms.Label DistanceLabel;
+        private System.Windows.Forms.TextBox NameField;
+        private System.Windows.Forms.Panel PanelForDeleting;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.TextBox DeleteBox;
+        private System.Windows.Forms.Label DeleteLabal;
+        private System.Windows.Forms.Label IDlabel;
     }
 }
