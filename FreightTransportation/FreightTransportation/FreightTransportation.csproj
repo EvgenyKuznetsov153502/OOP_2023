@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="WorkWithDB\Route.cs" />
     <Compile Include="WorkWithDB\UniqueCode.cs" />
+    <Compile Include="WorkWithDB\User.cs" />
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
