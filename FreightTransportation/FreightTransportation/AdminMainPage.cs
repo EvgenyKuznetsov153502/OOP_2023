@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class EmployeeMainPage : Form
+    public partial class AdminMainPage : Form
     {
-        private string UserName;
-        public EmployeeMainPage(string name)
+        string UserName;
+        public AdminMainPage(string userName)
         {
             InitializeComponent();
-            UserName= name;
-            UserNameText.Text= name;
+            UserName = userName;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -51,6 +50,7 @@ namespace FreightTransportation
         }
 
         Point lastPoint2;
+
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -58,6 +58,7 @@ namespace FreightTransportation
                 this.Left += e.X - lastPoint2.X;
                 this.Top += e.Y - lastPoint2.Y;
             }
+
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -68,22 +69,8 @@ namespace FreightTransportation
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm1 log_form = new LoginForm1();
-            log_form.Show();
-        }
-
-        private void routesButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RoutesForm routesForm = new RoutesForm(UserName);
-            routesForm.Show();
-        }
-
-        private void AdminButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminLogin adminLogin = new AdminLogin(UserName);
-            adminLogin.Show();
+            EmployeeMainPage employeeMainPage = new EmployeeMainPage(UserName);
+            employeeMainPage.Show();
         }
     }
 }
