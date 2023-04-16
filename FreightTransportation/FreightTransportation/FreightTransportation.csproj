@@ -50,6 +50,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMainPage.Designer.cs">
+      <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMainPage.Designer.cs">
+      <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriversFullPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriversFullPage.Designer.cs">
+      <DependentUpon>DriversFullPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeMainPage.Designer.cs">
+      <DependentUpon>EmployeeMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutesForm.Designer.cs">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UniqueCodePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UniqueCodePage.Designer.cs">
+      <DependentUpon>UniqueCodePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
     <Compile Include="LoginForm1.cs">
@@ -73,7 +115,25 @@
     <Compile Include="SingUpCustomerForm.Designer.cs">
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Driver.cs" />
+    <Compile Include="WorkWithDB\Route.cs" />
     <Compile Include="WorkWithDB\UniqueCode.cs" />
+    <Compile Include="WorkWithDB\User.cs" />
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMainPage.resx">
+      <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMainPage.resx">
+      <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriversFullPage.resx">
+      <DependentUpon>DriversFullPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMainPage.resx">
+      <DependentUpon>EmployeeMainPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,11 +142,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RoutesForm.resx">
+      <DependentUpon>RoutesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUpEmployeeForm.resx">
       <DependentUpon>SignUpEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingUpCustomerForm.resx">
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UniqueCodePage.resx">
+      <DependentUpon>UniqueCodePage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

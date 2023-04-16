@@ -93,6 +93,7 @@ namespace FreightTransportation
                 }
 
             }
+
             CheckEmpty(Full_Name);
             CheckEmpty(log);
             CheckEmpty(passField);
@@ -145,11 +146,12 @@ namespace FreightTransportation
                 Mail.Text = string.Empty;
                 tel.Text = string.Empty;
                 MessageBox.Show("Account created successfully");
+                this.Hide();
+                CustomerMainPage customerPage = new CustomerMainPage(login);
+                customerPage.Show();
             }
             else
                 MessageBox.Show("Error! Account not created");
-
-
         }
 
         private void BackButton_Click(object sender, EventArgs e)
