@@ -11,20 +11,26 @@ using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class AdminMainPage : Form
+    public partial class UniqueCodePage : Form
     {
         string UserName;
-        public AdminMainPage(string userName)
+        public UniqueCodePage(string userName)
         {
             InitializeComponent();
             UserName = userName;
+            dataGridView1.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             if (!Load())
             {
                 MessageBox.Show("Error loading data");
             }
-            dataGridView1.AutoResizeColumns(
-                   DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-           
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMainPage admin = new AdminMainPage(UserName);
+            admin.Show();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -34,7 +40,8 @@ namespace FreightTransportation
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
         {
-            closeButton.ForeColor = Color.Red; 
+            closeButton.ForeColor = Color.Red;
+
         }
 
         private void closeButton_MouseLeave(object sender, EventArgs e)
@@ -43,6 +50,7 @@ namespace FreightTransportation
         }
 
         Point lastPoint;
+
         private void MainPage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -56,29 +64,20 @@ namespace FreightTransportation
         {
             lastPoint = new Point(e.X, e.Y);
         }
-
         Point lastPoint2;
 
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        private void titel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 this.Left += e.X - lastPoint2.X;
                 this.Top += e.Y - lastPoint2.Y;
             }
-
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void titel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint2 = new Point(e.X, e.Y);
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            EmployeeMainPage employeeMainPage = new EmployeeMainPage(UserName);
-            employeeMainPage.Show();
         }
 
         private new bool Load()
@@ -87,10 +86,8 @@ namespace FreightTransportation
             try
             {
                 BindingSource bindingSource = new BindingSource();
-                User user = new User();
-                bindingSource.DataSource = user.GetAllUsers();
-                //dataGridView1.AutoResizeColumns(
-                //  DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                UniqueCode uniqueCode= new UniqueCode();
+                bindingSource.DataSource = uniqueCode.Get();
                 dataGridView1.DataSource = bindingSource;
             }
             catch
@@ -100,12 +97,71 @@ namespace FreightTransportation
             return flag;
         }
 
-        private void routesButton_Click(object sender, EventArgs e)
+        private void Loadbutton_Click(object sender, EventArgs e)
         {
             if (!Load())
             {
                 MessageBox.Show("Error loading data");
             }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            string code = CodeField.Text;
+
+            if (code == string.Empty)
+            {
+                CodeField.BackColor = Color.IndianRed;
+                return;
+            }
+            else
+            {
+                CodeField.BackColor = Color.White;
+            }
+
+            UniqueCode uniqueCode = new UniqueCode(code);
+
+            if (uniqueCode.IsCodeExists())
+            {
+                CodeField.BackColor = Color.IndianRed;
+                MessageBox.Show("This code already exists, please enter another one");
+                return;
+            }
+            else
+            {
+                CodeField.BackColor = Color.White;
+            }
+
+            if (uniqueCode.AddCode())
+            {
+                CodeField.Text = string.Empty;
+
+                if (!Load())
+                {
+                    MessageBox.Show("Error loading data");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error! Code not added");
+            }
+
+
+        }
+
+        private void DeleteBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0') && e.KeyChar <= '9')
+            {
+                return;
+            }
+
+            if (Char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -134,9 +190,10 @@ namespace FreightTransportation
                 MessageBox.Show("Incorrect data entered");
                 return;
             }
-            
-            User user= new User(result);
-            if (user.IsIdExists())
+
+            UniqueCode uniqueCode = new UniqueCode();
+
+            if (uniqueCode.IsIdExists(result))
             {
                 DeleteBox.BackColor = Color.White;
             }
@@ -146,8 +203,8 @@ namespace FreightTransportation
                 MessageBox.Show("Error! No such ID exists");
                 return;
             }
-            
-            if (user.Remove())
+
+            if (uniqueCode.Remove(result))
             {
                 DeleteBox.Text = string.Empty;
                 if (!Load())
@@ -157,24 +214,31 @@ namespace FreightTransportation
             }
             else
             {
-                MessageBox.Show("Error! User not deleted");
+                MessageBox.Show("Error! Code not deleted");
             }
-
-
         }
 
-        private void DriversButton_Click(object sender, EventArgs e)
+        private void Randombutton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DriversFullPage drivers = new DriversFullPage(UserName);
-            drivers.Show();
-        }
-
-        private void customersButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UniqueCodePage uniqueCode = new UniqueCodePage(UserName);
-            uniqueCode.Show();
+            UniqueCode uniqueCode = new UniqueCode();
+            uniqueCode.SetCode(uniqueCode.RandomCode());
+            if (uniqueCode.IsCodeExists())
+            {
+                MessageBox.Show("Error! Try again.");
+                return;
+            }
+            if (uniqueCode.AddCode())
+            {
+                if (!Load())
+                {
+                    MessageBox.Show("Error loading data");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error! Code not added");
+            }
         }
     }
 }

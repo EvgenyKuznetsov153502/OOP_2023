@@ -185,7 +185,7 @@ namespace FreightTransportation
             }
             else
             {
-                MessageBox.Show("Error! Route not added");
+                MessageBox.Show("Error! Driver not added");
             }
 
 
@@ -269,7 +269,7 @@ namespace FreightTransportation
             }
             else
             {
-                MessageBox.Show("Error! Route not deleted");
+                MessageBox.Show("Error! Driver not deleted");
             }
         }
     }

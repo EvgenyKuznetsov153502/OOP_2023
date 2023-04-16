@@ -194,6 +194,7 @@
             this.customersButton.TabIndex = 16;
             this.customersButton.Text = "Unique codes";
             this.customersButton.UseVisualStyleBackColor = true;
+            this.customersButton.Click += new System.EventHandler(this.customersButton_Click);
             // 
             // DriversButton
             // 

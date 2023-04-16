@@ -86,11 +86,11 @@
     <Compile Include="RoutesForm.Designer.cs">
       <DependentUpon>RoutesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UniqueCode.cs">
+    <Compile Include="UniqueCodePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UniqueCode.Designer.cs">
-      <DependentUpon>UniqueCode.cs</DependentUpon>
+    <Compile Include="UniqueCodePage.Designer.cs">
+      <DependentUpon>UniqueCodePage.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
@@ -150,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SingUpCustomerForm.resx">
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UniqueCodePage.resx">
+      <DependentUpon>UniqueCodePage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

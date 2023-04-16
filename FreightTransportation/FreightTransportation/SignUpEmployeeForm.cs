@@ -170,6 +170,9 @@ namespace FreightTransportation
                     return;
                 }
                 MessageBox.Show("Account created successfully");
+                this.Hide();
+                EmployeeMainPage employeeMainPage = new EmployeeMainPage(login);
+                employeeMainPage.Show();
             }
             else
             {
