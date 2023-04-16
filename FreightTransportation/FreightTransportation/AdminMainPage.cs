@@ -162,5 +162,12 @@ namespace FreightTransportation
 
 
         }
+
+        private void DriversButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DriversFullPage drivers = new DriversFullPage(UserName);
+            drivers.Show();
+        }
     }
 }

@@ -68,6 +68,12 @@
     <Compile Include="CustomerMainPage.Designer.cs">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriversFullPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriversFullPage.Designer.cs">
+      <DependentUpon>DriversFullPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="RoutesForm.Designer.cs">
       <DependentUpon>RoutesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UniqueCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UniqueCode.Designer.cs">
+      <DependentUpon>UniqueCode.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
@@ -103,6 +115,7 @@
     <Compile Include="SingUpCustomerForm.Designer.cs">
       <DependentUpon>SingUpCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Driver.cs" />
     <Compile Include="WorkWithDB\Route.cs" />
     <Compile Include="WorkWithDB\UniqueCode.cs" />
     <Compile Include="WorkWithDB\User.cs" />
@@ -114,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriversFullPage.resx">
+      <DependentUpon>DriversFullPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeMainPage.resx">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
