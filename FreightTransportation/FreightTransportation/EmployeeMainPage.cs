@@ -85,5 +85,12 @@ namespace FreightTransportation
             AdminLogin adminLogin = new AdminLogin(UserName);
             adminLogin.Show();
         }
+
+        private void customersButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerListForm customerListForm = new CustomerListForm(UserName);
+            customerListForm.Show();
+        }
     }
 }

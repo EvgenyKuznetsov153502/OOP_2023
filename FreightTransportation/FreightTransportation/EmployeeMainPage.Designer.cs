@@ -76,11 +76,11 @@
             this.AdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.AdminButton.Location = new System.Drawing.Point(1084, 164);
+            this.AdminButton.Location = new System.Drawing.Point(1074, 164);
             this.AdminButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminButton.Name = "AdminButton";
             this.AdminButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminButton.Size = new System.Drawing.Size(124, 39);
+            this.AdminButton.Size = new System.Drawing.Size(134, 39);
             this.AdminButton.TabIndex = 18;
             this.AdminButton.Text = "Admin";
             this.AdminButton.UseVisualStyleBackColor = true;
@@ -94,11 +94,11 @@
             this.routesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.routesButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.routesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.routesButton.Location = new System.Drawing.Point(1084, 228);
+            this.routesButton.Location = new System.Drawing.Point(1074, 228);
             this.routesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.routesButton.Name = "routesButton";
             this.routesButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.routesButton.Size = new System.Drawing.Size(124, 39);
+            this.routesButton.Size = new System.Drawing.Size(134, 39);
             this.routesButton.TabIndex = 17;
             this.routesButton.Text = "Routes";
             this.routesButton.UseVisualStyleBackColor = true;
@@ -112,14 +112,15 @@
             this.customersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customersButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.customersButton.Location = new System.Drawing.Point(1084, 291);
+            this.customersButton.Location = new System.Drawing.Point(1074, 291);
             this.customersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customersButton.Name = "customersButton";
             this.customersButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.customersButton.Size = new System.Drawing.Size(124, 39);
+            this.customersButton.Size = new System.Drawing.Size(134, 39);
             this.customersButton.TabIndex = 16;
             this.customersButton.Text = "Customers";
             this.customersButton.UseVisualStyleBackColor = true;
+            this.customersButton.Click += new System.EventHandler(this.customersButton_Click);
             // 
             // HistoryButton
             // 
@@ -129,11 +130,11 @@
             this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HistoryButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HistoryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.HistoryButton.Location = new System.Drawing.Point(1084, 355);
+            this.HistoryButton.Location = new System.Drawing.Point(1074, 355);
             this.HistoryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HistoryButton.Name = "HistoryButton";
             this.HistoryButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HistoryButton.Size = new System.Drawing.Size(124, 39);
+            this.HistoryButton.Size = new System.Drawing.Size(134, 39);
             this.HistoryButton.TabIndex = 15;
             this.HistoryButton.Text = "History";
             this.HistoryButton.UseVisualStyleBackColor = true;
@@ -146,11 +147,11 @@
             this.DriversButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DriversButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriversButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.DriversButton.Location = new System.Drawing.Point(1084, 416);
+            this.DriversButton.Location = new System.Drawing.Point(1074, 416);
             this.DriversButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DriversButton.Name = "DriversButton";
             this.DriversButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DriversButton.Size = new System.Drawing.Size(124, 40);
+            this.DriversButton.Size = new System.Drawing.Size(134, 40);
             this.DriversButton.TabIndex = 14;
             this.DriversButton.Text = "Drivers";
             this.DriversButton.UseVisualStyleBackColor = true;
@@ -163,11 +164,11 @@
             this.SignUpCustbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpCustbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpCustbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpCustbutton.Location = new System.Drawing.Point(1084, 480);
+            this.SignUpCustbutton.Location = new System.Drawing.Point(1074, 480);
             this.SignUpCustbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SignUpCustbutton.Name = "SignUpCustbutton";
             this.SignUpCustbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SignUpCustbutton.Size = new System.Drawing.Size(124, 39);
+            this.SignUpCustbutton.Size = new System.Drawing.Size(134, 39);
             this.SignUpCustbutton.TabIndex = 13;
             this.SignUpCustbutton.Text = "Account";
             this.SignUpCustbutton.UseVisualStyleBackColor = true;
@@ -180,10 +181,10 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.BackButton.Location = new System.Drawing.Point(1084, 542);
+            this.BackButton.Location = new System.Drawing.Point(1074, 542);
             this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(120, 39);
+            this.BackButton.Size = new System.Drawing.Size(130, 39);
             this.BackButton.TabIndex = 12;
             this.BackButton.Text = "Exit";
             this.BackButton.UseVisualStyleBackColor = true;

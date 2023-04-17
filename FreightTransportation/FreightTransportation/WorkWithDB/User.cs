@@ -11,7 +11,7 @@ namespace FreightTransportation.WorkWithDB
 {
     public  class User
     {
-        int id;
+        protected int id;
         public User() { id = -1; }
         public User(int id) { this.id = id;}
         public int GetId() { return id; }

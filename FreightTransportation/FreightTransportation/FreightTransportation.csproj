@@ -62,6 +62,12 @@
     <Compile Include="AdminMainPage.Designer.cs">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerListForm.Designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,7 @@
     <Compile Include="UniqueCodePage.Designer.cs">
       <DependentUpon>UniqueCodePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Customer.cs" />
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
     <Compile Include="LoginForm1.cs">
@@ -124,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainPage.resx">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
@@ -174,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\kisspng-computer-icons-user-profile-password-login-end-user-5b55c605753eb6.8354409015323479094803.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
