@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMainPage));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titel = new System.Windows.Forms.Panel();
             this.UserNameText = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,9 +39,23 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MainPage = new System.Windows.Forms.Panel();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SendButton = new System.Windows.Forms.Button();
+            this.dateTimeUnload = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeLoad = new System.Windows.Forms.DateTimePicker();
+            this.UnloadLabel = new System.Windows.Forms.Label();
+            this.loadLabel = new System.Windows.Forms.Label();
+            this.IDBox = new System.Windows.Forms.TextBox();
+            this.IDlabel = new System.Windows.Forms.Label();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.Loadbutton = new System.Windows.Forms.Button();
             this.titel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // titel
@@ -134,7 +149,7 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.BackButton.Location = new System.Drawing.Point(1079, 290);
+            this.BackButton.Location = new System.Drawing.Point(12, 737);
             this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(124, 39);
@@ -163,6 +178,10 @@
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.MainPage.Controls.Add(this.Loadbutton);
+            this.MainPage.Controls.Add(this.PasswordLabel);
+            this.MainPage.Controls.Add(this.dataGridView1);
+            this.MainPage.Controls.Add(this.panel1);
             this.MainPage.Controls.Add(this.button1);
             this.MainPage.Controls.Add(this.BackButton);
             this.MainPage.Controls.Add(this.SignUpCustbutton);
@@ -176,6 +195,158 @@
             this.MainPage.TabIndex = 2;
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.PasswordLabel.Location = new System.Drawing.Point(690, 179);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(136, 45);
+            this.PasswordLabel.TabIndex = 30;
+            this.PasswordLabel.Text = "Routes:";
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(451, 238);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(609, 436);
+            this.dataGridView1.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.panel1.Controls.Add(this.SendButton);
+            this.panel1.Controls.Add(this.dateTimeUnload);
+            this.panel1.Controls.Add(this.dateTimeLoad);
+            this.panel1.Controls.Add(this.UnloadLabel);
+            this.panel1.Controls.Add(this.loadLabel);
+            this.panel1.Controls.Add(this.IDBox);
+            this.panel1.Controls.Add(this.IDlabel);
+            this.panel1.Controls.Add(this.SearchLabel);
+            this.panel1.Location = new System.Drawing.Point(22, 271);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(411, 325);
+            this.panel1.TabIndex = 28;
+            // 
+            // SendButton
+            // 
+            this.SendButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SendButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.SendButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.SendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SendButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.SendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.SendButton.Location = new System.Drawing.Point(259, 259);
+            this.SendButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(124, 39);
+            this.SendButton.TabIndex = 29;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            // 
+            // dateTimeUnload
+            // 
+            this.dateTimeUnload.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.dateTimeUnload.Location = new System.Drawing.Point(162, 198);
+            this.dateTimeUnload.MinDate = new System.DateTime(2023, 4, 20, 19, 35, 40, 0);
+            this.dateTimeUnload.Name = "dateTimeUnload";
+            this.dateTimeUnload.Size = new System.Drawing.Size(221, 30);
+            this.dateTimeUnload.TabIndex = 35;
+            this.dateTimeUnload.Value = new System.DateTime(2023, 4, 20, 19, 35, 40, 0);
+            // 
+            // dateTimeLoad
+            // 
+            this.dateTimeLoad.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.dateTimeLoad.Location = new System.Drawing.Point(162, 146);
+            this.dateTimeLoad.MinDate = new System.DateTime(2023, 4, 20, 0, 0, 0, 0);
+            this.dateTimeLoad.Name = "dateTimeLoad";
+            this.dateTimeLoad.Size = new System.Drawing.Size(221, 30);
+            this.dateTimeLoad.TabIndex = 34;
+            // 
+            // UnloadLabel
+            // 
+            this.UnloadLabel.AutoSize = true;
+            this.UnloadLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnloadLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.UnloadLabel.Location = new System.Drawing.Point(-6, 197);
+            this.UnloadLabel.Name = "UnloadLabel";
+            this.UnloadLabel.Size = new System.Drawing.Size(133, 31);
+            this.UnloadLabel.TabIndex = 33;
+            this.UnloadLabel.Text = "Unloading:";
+            // 
+            // loadLabel
+            // 
+            this.loadLabel.AutoSize = true;
+            this.loadLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.loadLabel.Location = new System.Drawing.Point(20, 146);
+            this.loadLabel.Name = "loadLabel";
+            this.loadLabel.Size = new System.Drawing.Size(107, 31);
+            this.loadLabel.TabIndex = 32;
+            this.loadLabel.Text = "Loading:";
+            // 
+            // IDBox
+            // 
+            this.IDBox.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDBox.Location = new System.Drawing.Point(162, 86);
+            this.IDBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IDBox.MaxLength = 6;
+            this.IDBox.Multiline = true;
+            this.IDBox.Name = "IDBox";
+            this.IDBox.Size = new System.Drawing.Size(221, 40);
+            this.IDBox.TabIndex = 29;
+            this.IDBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DeleteBox_KeyPress);
+            // 
+            // IDlabel
+            // 
+            this.IDlabel.AutoSize = true;
+            this.IDlabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDlabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.IDlabel.Location = new System.Drawing.Point(14, 89);
+            this.IDlabel.Name = "IDlabel";
+            this.IDlabel.Size = new System.Drawing.Size(113, 31);
+            this.IDlabel.TabIndex = 30;
+            this.IDlabel.Text = "Route ID:";
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.SearchLabel.Location = new System.Drawing.Point(64, 17);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(259, 45);
+            this.SearchLabel.TabIndex = 27;
+            this.SearchLabel.Text = "Send a request:";
+            // 
+            // Loadbutton
+            // 
+            this.Loadbutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Loadbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.Loadbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.Loadbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Loadbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loadbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.Loadbutton.Location = new System.Drawing.Point(1079, 737);
+            this.Loadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Loadbutton.Name = "Loadbutton";
+            this.Loadbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Loadbutton.Size = new System.Drawing.Size(124, 39);
+            this.Loadbutton.TabIndex = 31;
+            this.Loadbutton.Text = "Load";
+            this.Loadbutton.UseVisualStyleBackColor = true;
+            this.Loadbutton.Click += new System.EventHandler(this.Loadbutton_Click);
             // 
             // CustomerMainPage
             // 
@@ -191,6 +362,10 @@
             this.titel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPage.ResumeLayout(false);
+            this.MainPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +381,17 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel MainPage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox IDBox;
+        private System.Windows.Forms.Label IDlabel;
+        private System.Windows.Forms.DateTimePicker dateTimeUnload;
+        private System.Windows.Forms.DateTimePicker dateTimeLoad;
+        private System.Windows.Forms.Label UnloadLabel;
+        private System.Windows.Forms.Label loadLabel;
+        private System.Windows.Forms.Button SendButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.Button Loadbutton;
     }
 }

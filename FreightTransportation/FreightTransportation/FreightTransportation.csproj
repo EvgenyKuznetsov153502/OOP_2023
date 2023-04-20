@@ -86,6 +86,7 @@
     <Compile Include="EmployeeMainPage.Designer.cs">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Request.cs" />
     <Compile Include="RoutesForm.cs">
       <SubType>Form</SubType>
     </Compile>

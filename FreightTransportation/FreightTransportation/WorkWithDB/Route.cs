@@ -45,6 +45,13 @@ namespace FreightTransportation.WorkWithDB
             return table;
         }
 
+        public DataTable GetRoutesForCust()
+        {
+            DataTable table = this.GetRoutes();
+            table.Columns.RemoveAt(3);
+            return table;
+        }
+
         public bool IsRouteExists()
         {
             DataBase db = new DataBase();
@@ -120,7 +127,23 @@ namespace FreightTransportation.WorkWithDB
                 return true;
             else
                 return false;
+        }
 
+        public string GetRouteName(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `routes` WHERE `id` = @id", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = _ID;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            DataRow row = table.Rows[0];
+            string name = row["name"].ToString();
+            return name;
         }
 
     }

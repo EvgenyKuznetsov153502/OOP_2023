@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
             this.MainPage = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SearchField = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -39,11 +40,10 @@
             this.routesButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.Label();
             this.UserNameText = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.SearchField = new System.Windows.Forms.TextBox();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.closeButton = new System.Windows.Forms.Label();
             this.MainPage.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,6 +81,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 144);
             this.panel1.TabIndex = 29;
+            // 
+            // SearchField
+            // 
+            this.SearchField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchField.Location = new System.Drawing.Point(123, 80);
+            this.SearchField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchField.MaxLength = 18;
+            this.SearchField.Multiline = true;
+            this.SearchField.Name = "SearchField";
+            this.SearchField.Size = new System.Drawing.Size(307, 39);
+            this.SearchField.TabIndex = 29;
             // 
             // SearchLabel
             // 
@@ -123,9 +134,9 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(118, 168);
@@ -187,6 +198,27 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
+            // UserNameText
+            // 
+            this.UserNameText.AutoSize = true;
+            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.UserNameText.Location = new System.Drawing.Point(65, 90);
+            this.UserNameText.Name = "UserNameText";
+            this.UserNameText.Size = new System.Drawing.Size(102, 38);
+            this.UserNameText.TabIndex = 17;
+            this.UserNameText.Text = "LOGIN";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(14, 90);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
@@ -216,38 +248,6 @@
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
             this.closeButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.closeButton_MouseMove);
-            // 
-            // UserNameText
-            // 
-            this.UserNameText.AutoSize = true;
-            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.UserNameText.Location = new System.Drawing.Point(65, 90);
-            this.UserNameText.Name = "UserNameText";
-            this.UserNameText.Size = new System.Drawing.Size(102, 38);
-            this.UserNameText.TabIndex = 17;
-            this.UserNameText.Text = "LOGIN";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(14, 90);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
-            // SearchField
-            // 
-            this.SearchField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchField.Location = new System.Drawing.Point(123, 80);
-            this.SearchField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SearchField.MaxLength = 18;
-            this.SearchField.Multiline = true;
-            this.SearchField.Name = "SearchField";
-            this.SearchField.Size = new System.Drawing.Size(307, 39);
-            this.SearchField.TabIndex = 29;
             // 
             // CustomerListForm
             // 
