@@ -104,5 +104,50 @@ namespace FreightTransportation
             else
                 return false;
         }
+
+        public DataTable GetRequests()
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests`", db.GetConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public DataTable GetCustRequests()
+        {
+            DataTable table = this.GetRequests();
+            table.Columns.RemoveAt(4);
+            table.Columns.RemoveAt(4);
+            return table;
+        }
+
+        public bool Remove(int _ID)
+        {
+            bool IsRemoved = false;
+
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("DELETE FROM `requests` WHERE `id` = @id", db.GetConnection());
+
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = _ID;
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                IsRemoved = true;
+
+            db.CloseConnection();
+
+            return IsRemoved;
+        }
+
+
+
+
     }
 }

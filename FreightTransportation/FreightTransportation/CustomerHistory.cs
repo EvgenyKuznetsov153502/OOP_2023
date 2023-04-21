@@ -5,18 +5,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class CustomerMainPage : Form
+    public partial class CustomerHistory : Form
     {
-        private string UserName;
-
-        public CustomerMainPage(string name)
+        string UserName;
+        public CustomerHistory(string name)
         {
             InitializeComponent();
             UserName = name;
@@ -27,13 +25,11 @@ namespace FreightTransportation
             {
                 MessageBox.Show("Error loading data");
             }
-            dateTimeLoad.MinDate = DateTime.Now;
-            dateTimeUnload.MinDate = DateTime.Now;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -47,6 +43,7 @@ namespace FreightTransportation
         }
 
         Point lastPoint;
+
         private void MainPage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -60,7 +57,6 @@ namespace FreightTransportation
         {
             lastPoint = new Point(e.X, e.Y);
         }
-
 
         Point lastPoint2;
         private void titel_MouseMove(object sender, MouseEventArgs e)
@@ -80,8 +76,8 @@ namespace FreightTransportation
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm1 loginForm = new LoginForm1();
-            loginForm.Show();
+            CustomerMainPage customerMainPage = new CustomerMainPage(UserName);
+            customerMainPage.Show();
         }
 
         private new bool Load()
@@ -90,8 +86,8 @@ namespace FreightTransportation
             try
             {
                 BindingSource bindingSource = new BindingSource();
-                Route route = new Route();
-                bindingSource.DataSource = route.GetRoutesForCust();
+                Request request = new Request();
+                bindingSource.DataSource = request.GetCustRequests();
                 dataGridView1.DataSource = bindingSource;
             }
             catch
@@ -123,86 +119,59 @@ namespace FreightTransportation
             e.Handled = true;
         }
 
-        private void SendButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
-            string id = IDBox.Text;
-            DateTime date_load = dateTimeLoad.Value.Date;
-            DateTime date_unload = dateTimeUnload.Value.Date;
-            if(id == string.Empty)
+            if(DeleteBox.Text == string.Empty)
             {
-                IDBox.BackColor = Color.IndianRed;
+                DeleteBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Fill in the field");
                 return;
             }
             else
             {
-                IDBox.BackColor = Color.White;
+                DeleteBox.BackColor = Color.White;
             }
 
             int result;
             try
             {
-               result = int.Parse(IDBox.Text);
-               IDBox.BackColor = Color.White;
+                result = int.Parse(DeleteBox.Text);
+                DeleteBox.BackColor = Color.White;
             }
             catch
             {
                 result = -1;
-                IDBox.BackColor = Color.IndianRed;
+                DeleteBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Incorrect data entered");
                 return;
             }
 
-            Route route = new Route();
+            Request request = new Request();
 
-            if (route.IsIdExists(result))
+            if (request.IsIdExists(result))
             {
-                IDBox.BackColor = Color.White;
+                DeleteBox.BackColor = Color.White;
             }
             else
             {
-                IDBox.BackColor = Color.IndianRed;
+                DeleteBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Error! No such ID exists");
                 return;
             }
 
-            int compare = date_unload.CompareTo(date_load);
-            if (compare < 0)
+            if (request.Remove(result))
             {
-                MessageBox.Show("The unloading date can't be earlier than the loading date");
-                return;
-            }
-
-            string route_name = route.GetRouteName(result);
-            string load = date_load.ToShortDateString();
-            string unload = date_unload.ToShortDateString();
-
-            Request request = new Request(route_name, load, unload, UserName, "in processing");
-
-            if (request.IsRequestExists())
-            {
-                MessageBox.Show("Such a request already exists");
-                return;
-            }
-
-            if (request.SendRequest())
-            {
-                IDBox.Text = string.Empty;
-                dateTimeLoad.Value = dateTimeLoad.MinDate;
-                dateTimeUnload.Value = dateTimeUnload.MinDate;
-                MessageBox.Show("The request has been sent successfully");
+                DeleteBox.Text = string.Empty;
+                if (!Load())
+                {
+                    MessageBox.Show("Error loading data");
+                }
             }
             else
             {
-                MessageBox.Show("Error! Request not sented");
+                MessageBox.Show("Error! Driver not deleted");
             }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CustomerHistory customerHistory = new CustomerHistory(UserName);
-            customerHistory.Show();
         }
     }
 }

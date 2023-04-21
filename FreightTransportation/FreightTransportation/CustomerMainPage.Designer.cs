@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMainPage));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMainPage));
             this.titel = new System.Windows.Forms.Panel();
             this.UserNameText = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SignUpCustbutton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MainPage = new System.Windows.Forms.Panel();
+            this.Loadbutton = new System.Windows.Forms.Button();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,12 +50,12 @@
             this.IDBox = new System.Windows.Forms.TextBox();
             this.IDlabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.Loadbutton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titel
@@ -84,16 +84,6 @@
             this.UserNameText.Size = new System.Drawing.Size(102, 38);
             this.UserNameText.TabIndex = 15;
             this.UserNameText.Text = "LOGIN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // closeButton
             // 
@@ -174,6 +164,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "History";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainPage
             // 
@@ -195,6 +186,24 @@
             this.MainPage.TabIndex = 2;
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
+            // 
+            // Loadbutton
+            // 
+            this.Loadbutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Loadbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.Loadbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.Loadbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Loadbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loadbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.Loadbutton.Location = new System.Drawing.Point(1079, 737);
+            this.Loadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Loadbutton.Name = "Loadbutton";
+            this.Loadbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Loadbutton.Size = new System.Drawing.Size(124, 39);
+            this.Loadbutton.TabIndex = 31;
+            this.Loadbutton.Text = "Load";
+            this.Loadbutton.UseVisualStyleBackColor = true;
+            this.Loadbutton.Click += new System.EventHandler(this.Loadbutton_Click);
             // 
             // PasswordLabel
             // 
@@ -330,23 +339,15 @@
             this.SearchLabel.TabIndex = 27;
             this.SearchLabel.Text = "Send a request:";
             // 
-            // Loadbutton
+            // pictureBox1
             // 
-            this.Loadbutton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Loadbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
-            this.Loadbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
-            this.Loadbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Loadbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loadbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.Loadbutton.Location = new System.Drawing.Point(1079, 737);
-            this.Loadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Loadbutton.Name = "Loadbutton";
-            this.Loadbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Loadbutton.Size = new System.Drawing.Size(124, 39);
-            this.Loadbutton.TabIndex = 31;
-            this.Loadbutton.Text = "Load";
-            this.Loadbutton.UseVisualStyleBackColor = true;
-            this.Loadbutton.Click += new System.EventHandler(this.Loadbutton_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // CustomerMainPage
             // 
@@ -360,12 +361,12 @@
             this.Text = "CustomerMainPage";
             this.titel.ResumeLayout(false);
             this.titel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPage.ResumeLayout(false);
             this.MainPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
