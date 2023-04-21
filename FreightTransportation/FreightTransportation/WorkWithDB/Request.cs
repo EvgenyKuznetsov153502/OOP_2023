@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -23,6 +24,11 @@ namespace FreightTransportation
             status= string.Empty;
         }
 
+        public Request(string driver) : this()
+        {
+            this.driver= driver;
+        }
+
         public Request(string route, string loading, string unloading, string customer, string status)
         {
             this.route = route;
@@ -37,6 +43,16 @@ namespace FreightTransportation
             string customer, string status) : this(route, loading, unloading, customer, status)
         {
             this.driver = string.Empty;
+        }
+
+        public void SetDriver(string driver)
+        {
+            this.driver = driver;
+        }
+
+        public void SetCustomer(string cus)
+        {
+            customer = cus;
         }
 
         public bool IsIdExists(int _ID)
@@ -121,9 +137,34 @@ namespace FreightTransportation
 
         public DataTable GetCustRequests()
         {
-            DataTable table = this.GetRequests();
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `customer` = @cus", db.GetConnection());
+            command.Parameters.Add("@cus", MySqlDbType.VarChar).Value = customer;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
             table.Columns.RemoveAt(4);
             table.Columns.RemoveAt(4);
+            return table;
+        }
+
+        public DataTable GetEmplRequests()
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `status` = @status", db.GetConnection());
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = "in processing";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            table.Columns.RemoveAt(4);
+            table.Columns.RemoveAt(5);
             return table;
         }
 
@@ -145,6 +186,29 @@ namespace FreightTransportation
 
             return IsRemoved;
         }
+
+        public bool Processing(string status, int _ID)
+        {
+            bool flag = false;
+
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("UPDATE `requests` SET `driver` = @driver," +
+                " `status` = @status WHERE `id` = @id", db.GetConnection());
+
+            command.Parameters.Add("@driver", MySqlDbType.VarChar).Value = driver;
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = status;
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                flag = true;
+
+            db.CloseConnection();
+
+            return flag;
+        }
+
 
 
 

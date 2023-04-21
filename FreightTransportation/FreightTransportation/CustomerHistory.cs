@@ -87,6 +87,7 @@ namespace FreightTransportation
             {
                 BindingSource bindingSource = new BindingSource();
                 Request request = new Request();
+                request.SetCustomer(UserName);
                 bindingSource.DataSource = request.GetCustRequests();
                 dataGridView1.DataSource = bindingSource;
             }
