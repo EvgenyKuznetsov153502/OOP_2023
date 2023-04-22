@@ -180,6 +180,28 @@ namespace FreightTransportation.WorkWithDB
             return flag;
         }
 
+        public bool Payment(int money)
+        {
+            bool flag = false;
+
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("UPDATE `drivers` SET `payment` = `payment` + @money," +
+                " `OnRoute` = @an WHERE `name` = @name", db.GetConnection());
+
+            command.Parameters.Add("@money", MySqlDbType.Int32).Value = money;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+            command.Parameters.Add("@an", MySqlDbType.VarChar).Value = "No";
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                flag = true;
+
+            db.CloseConnection();
+
+            return flag;
+        }
+
 
 
 

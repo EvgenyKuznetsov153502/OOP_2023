@@ -146,5 +146,24 @@ namespace FreightTransportation.WorkWithDB
             return name;
         }
 
+        public int GetPayment(string name)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `routes` WHERE `name` = @name", db.GetConnection());
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            DataRow row = table.Rows[0];
+
+            int payment = int.Parse(row["payment"].ToString());
+            return payment;
+        }
+
+
     }
 }

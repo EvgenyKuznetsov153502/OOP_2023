@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMainPage));
             this.MainPage = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.IdBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.MainPage.Controls.Add(this.button1);
             this.MainPage.Controls.Add(this.panel1);
             this.MainPage.Controls.Add(this.ListOfRequestLabel);
             this.MainPage.Controls.Add(this.Loadbutton);
@@ -86,6 +88,24 @@
             this.MainPage.TabIndex = 1;
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.button1.Location = new System.Drawing.Point(1249, 360);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Size = new System.Drawing.Size(146, 39);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Сompletion";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -113,7 +133,6 @@
             this.IdBox.Name = "IdBox";
             this.IdBox.Size = new System.Drawing.Size(253, 39);
             this.IdBox.TabIndex = 40;
-            this.IdBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DeleteBox_KeyPress);
             // 
             // label1
             // 
@@ -227,12 +246,12 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(499, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(488, 221);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -248,11 +267,11 @@
             this.AdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.AdminButton.Location = new System.Drawing.Point(1261, 167);
+            this.AdminButton.Location = new System.Drawing.Point(1249, 167);
             this.AdminButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminButton.Name = "AdminButton";
             this.AdminButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminButton.Size = new System.Drawing.Size(134, 39);
+            this.AdminButton.Size = new System.Drawing.Size(146, 39);
             this.AdminButton.TabIndex = 18;
             this.AdminButton.Text = "Admin";
             this.AdminButton.UseVisualStyleBackColor = true;
@@ -266,11 +285,11 @@
             this.routesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.routesButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.routesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.routesButton.Location = new System.Drawing.Point(1261, 231);
+            this.routesButton.Location = new System.Drawing.Point(1249, 231);
             this.routesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.routesButton.Name = "routesButton";
             this.routesButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.routesButton.Size = new System.Drawing.Size(134, 39);
+            this.routesButton.Size = new System.Drawing.Size(146, 39);
             this.routesButton.TabIndex = 17;
             this.routesButton.Text = "Routes";
             this.routesButton.UseVisualStyleBackColor = true;
@@ -284,11 +303,11 @@
             this.customersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customersButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.customersButton.Location = new System.Drawing.Point(1261, 294);
+            this.customersButton.Location = new System.Drawing.Point(1249, 294);
             this.customersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customersButton.Name = "customersButton";
             this.customersButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.customersButton.Size = new System.Drawing.Size(134, 39);
+            this.customersButton.Size = new System.Drawing.Size(146, 39);
             this.customersButton.TabIndex = 16;
             this.customersButton.Text = "Customers";
             this.customersButton.UseVisualStyleBackColor = true;
@@ -302,11 +321,11 @@
             this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HistoryButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HistoryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.HistoryButton.Location = new System.Drawing.Point(1261, 358);
+            this.HistoryButton.Location = new System.Drawing.Point(1249, 416);
             this.HistoryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HistoryButton.Name = "HistoryButton";
             this.HistoryButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HistoryButton.Size = new System.Drawing.Size(134, 39);
+            this.HistoryButton.Size = new System.Drawing.Size(146, 39);
             this.HistoryButton.TabIndex = 15;
             this.HistoryButton.Text = "History";
             this.HistoryButton.UseVisualStyleBackColor = true;
@@ -319,11 +338,11 @@
             this.DriversButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DriversButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriversButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.DriversButton.Location = new System.Drawing.Point(1261, 419);
+            this.DriversButton.Location = new System.Drawing.Point(1249, 477);
             this.DriversButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DriversButton.Name = "DriversButton";
             this.DriversButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DriversButton.Size = new System.Drawing.Size(134, 40);
+            this.DriversButton.Size = new System.Drawing.Size(146, 40);
             this.DriversButton.TabIndex = 14;
             this.DriversButton.Text = "Drivers";
             this.DriversButton.UseVisualStyleBackColor = true;
@@ -336,11 +355,11 @@
             this.SignUpCustbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUpCustbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpCustbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.SignUpCustbutton.Location = new System.Drawing.Point(1261, 483);
+            this.SignUpCustbutton.Location = new System.Drawing.Point(1249, 541);
             this.SignUpCustbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SignUpCustbutton.Name = "SignUpCustbutton";
             this.SignUpCustbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SignUpCustbutton.Size = new System.Drawing.Size(134, 39);
+            this.SignUpCustbutton.Size = new System.Drawing.Size(146, 39);
             this.SignUpCustbutton.TabIndex = 13;
             this.SignUpCustbutton.Text = "Account";
             this.SignUpCustbutton.UseVisualStyleBackColor = true;
@@ -478,5 +497,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox StatusBox;
         private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

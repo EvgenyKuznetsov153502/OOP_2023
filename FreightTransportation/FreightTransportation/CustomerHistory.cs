@@ -149,7 +149,7 @@ namespace FreightTransportation
 
             Request request = new Request();
 
-            if (request.IsIdExists(result))
+            if (request.IsIdExists(result, UserName))
             {
                 DeleteBox.BackColor = Color.White;
             }

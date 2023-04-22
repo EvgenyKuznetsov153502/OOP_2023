@@ -42,7 +42,7 @@ namespace FreightTransportation
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
         {
-            closeButton.ForeColor = Color.Red; ;
+            closeButton.ForeColor = Color.Red; 
         }
 
         private void closeButton_MouseLeave(object sender, EventArgs e)
@@ -157,19 +157,8 @@ namespace FreightTransportation
             }
         }
 
-        private void DeleteBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= '0') && e.KeyChar <= '9')
-            {
-                return;
-            }
+        
 
-            if (Char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-            e.Handled = true;
-        }
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
@@ -200,7 +189,7 @@ namespace FreightTransportation
 
             Request request = new Request();
 
-            if (request.IsIdExists(result))
+            if (request.IsIdExists_InProcessing(result))
             {
                 IdBox.BackColor = Color.White;
             }
@@ -250,6 +239,13 @@ namespace FreightTransportation
             {
                 MessageBox.Show("Error loading data");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CompletionTransportationForm form = new CompletionTransportationForm(UserName);
+            form.Show();
         }
     }
 }

@@ -73,6 +73,63 @@ namespace FreightTransportation
                 return false;
         }
 
+        public bool IsIdExists_Approved(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id AND `status` = @st", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+            command.Parameters.Add("@st", MySqlDbType.VarChar).Value = "approved";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool IsIdExists_InProcessing(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id AND `status` = @st", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+            command.Parameters.Add("@st", MySqlDbType.VarChar).Value = "in processing";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool IsIdExists(int _ID, string customer)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id AND `customer` = @cus", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+            command.Parameters.Add("@cus", MySqlDbType.VarChar).Value = customer;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
 
         public bool SendRequest()
         {
@@ -168,6 +225,24 @@ namespace FreightTransportation
             return table;
         }
 
+        public DataTable GetApprovedRequests()
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `status` = @status", db.GetConnection());
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = "approved";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+                
+            table.Columns.RemoveAt(6);
+            return table;
+        }
+
+
+
         public bool Remove(int _ID)
         {
             bool IsRemoved = false;
@@ -209,8 +284,61 @@ namespace FreightTransportation
             return flag;
         }
 
+        public bool ChangeStatusToComplete(int _ID)
+        {
+            bool flag = false;
 
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("UPDATE `requests` SET `status` = @status" +
+                " WHERE `id` = @id", db.GetConnection());
 
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = "completed";
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                flag = true;
+
+            db.CloseConnection();
+
+            return flag;
+
+        }
+
+        public string GetRoute(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = _ID;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            DataRow row = table.Rows[0];
+            string route = row["route"].ToString();
+            return route;
+        }
+
+        public string GetDriver(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = _ID;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            DataRow row = table.Rows[0];
+            string driver = row["driver"].ToString();
+            return driver;
+        }
 
 
     }
