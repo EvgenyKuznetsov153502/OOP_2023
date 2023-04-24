@@ -111,6 +111,25 @@ namespace FreightTransportation
                 return false;
         }
 
+        public bool IsIdExists_Completed(int _ID)
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `id` = @id AND `status` = @st", db.GetConnection());
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
+            command.Parameters.Add("@st", MySqlDbType.VarChar).Value = "completed";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
         public bool IsIdExists(int _ID, string customer)
         {
             DataBase db = new DataBase();
@@ -207,6 +226,24 @@ namespace FreightTransportation
             table.Columns.RemoveAt(4);
             return table;
         }
+
+        public DataTable GetCompletedRequests()
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `status` = @status", db.GetConnection());
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = "completed";
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            table.Columns.RemoveAt(6);
+            return table;
+        }
+
+
 
         public DataTable GetEmplRequests()
         {
@@ -338,6 +375,23 @@ namespace FreightTransportation
             DataRow row = table.Rows[0];
             string driver = row["driver"].ToString();
             return driver;
+        }
+
+        public DataTable SearchByCustomer()
+        {
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `requests` WHERE `customer` = @cus AND `status` = @st", db.GetConnection());
+
+            command.Parameters.Add("@st", MySqlDbType.VarChar).Value = "completed";
+            command.Parameters.Add("@cus", MySqlDbType.VarChar).Value = customer;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            table.Columns.RemoveAt(6);
+            return table;
         }
 
 

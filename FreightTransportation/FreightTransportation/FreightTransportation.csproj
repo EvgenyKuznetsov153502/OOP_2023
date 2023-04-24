@@ -98,6 +98,12 @@
     <Compile Include="EmployeeMainPage.Designer.cs">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeHistory.Designer.cs">
+      <DependentUpon>EmployeeHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithDB\Request.cs" />
     <Compile Include="RoutesForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeMainPage.resx">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHistory.resx">
+      <DependentUpon>EmployeeHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.cs</DependentUpon>

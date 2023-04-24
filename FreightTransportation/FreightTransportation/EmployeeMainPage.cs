@@ -247,5 +247,12 @@ namespace FreightTransportation
             CompletionTransportationForm form = new CompletionTransportationForm(UserName);
             form.Show();
         }
+
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmployeeHistory history = new EmployeeHistory(UserName);
+            history.Show();
+        }
     }
 }

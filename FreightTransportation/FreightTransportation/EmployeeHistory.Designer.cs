@@ -1,6 +1,6 @@
 ﻿namespace FreightTransportation
 {
-    partial class CustomerHistory
+    partial class EmployeeHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerHistory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeHistory));
             this.MainPage = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SearchField = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.PanelForDeleting = new System.Windows.Forms.Panel();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.DeleteBox = new System.Windows.Forms.TextBox();
@@ -46,6 +51,8 @@
             this.closeButton = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.MainPage.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PanelForDeleting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.titel.SuspendLayout();
@@ -55,6 +62,7 @@
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
+            this.MainPage.Controls.Add(this.panel1);
             this.MainPage.Controls.Add(this.PanelForDeleting);
             this.MainPage.Controls.Add(this.Loadbutton);
             this.MainPage.Controls.Add(this.PasswordLabel);
@@ -66,10 +74,72 @@
             this.MainPage.Location = new System.Drawing.Point(0, 0);
             this.MainPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPage.Name = "MainPage";
-            this.MainPage.Size = new System.Drawing.Size(979, 771);
-            this.MainPage.TabIndex = 3;
+            this.MainPage.Size = new System.Drawing.Size(1225, 773);
+            this.MainPage.TabIndex = 4;
             this.MainPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseDown);
             this.MainPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPage_MouseMove);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.panel1.Controls.Add(this.SearchField);
+            this.panel1.Controls.Add(this.SearchLabel);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.SearchButton);
+            this.panel1.Location = new System.Drawing.Point(325, 604);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 135);
+            this.panel1.TabIndex = 33;
+            // 
+            // SearchField
+            // 
+            this.SearchField.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchField.Location = new System.Drawing.Point(122, 74);
+            this.SearchField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchField.MaxLength = 18;
+            this.SearchField.Multiline = true;
+            this.SearchField.Name = "SearchField";
+            this.SearchField.Size = new System.Drawing.Size(307, 39);
+            this.SearchField.TabIndex = 29;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.SearchLabel.Location = new System.Drawing.Point(128, 10);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(301, 41);
+            this.SearchLabel.TabIndex = 26;
+            this.SearchLabel.Text = "Search by customer:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FreightTransportation.Properties.Resources.search2;
+            this.pictureBox2.Location = new System.Drawing.Point(40, 62);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(66, 61);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.SearchButton.Location = new System.Drawing.Point(460, 74);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchButton.Size = new System.Drawing.Size(96, 39);
+            this.SearchButton.TabIndex = 14;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // PanelForDeleting
             // 
@@ -78,9 +148,9 @@
             this.PanelForDeleting.Controls.Add(this.DeleteBox);
             this.PanelForDeleting.Controls.Add(this.DeleteLabal);
             this.PanelForDeleting.Controls.Add(this.label1);
-            this.PanelForDeleting.Location = new System.Drawing.Point(285, 641);
+            this.PanelForDeleting.Location = new System.Drawing.Point(24, 295);
             this.PanelForDeleting.Name = "PanelForDeleting";
-            this.PanelForDeleting.Size = new System.Drawing.Size(401, 108);
+            this.PanelForDeleting.Size = new System.Drawing.Size(297, 216);
             this.PanelForDeleting.TabIndex = 32;
             // 
             // DeleteButton
@@ -91,7 +161,7 @@
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.DeleteButton.Location = new System.Drawing.Point(288, 56);
+            this.DeleteButton.Location = new System.Drawing.Point(178, 141);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -104,12 +174,12 @@
             // DeleteBox
             // 
             this.DeleteBox.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBox.Location = new System.Drawing.Point(89, 56);
+            this.DeleteBox.Location = new System.Drawing.Point(82, 84);
             this.DeleteBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteBox.MaxLength = 6;
             this.DeleteBox.Multiline = true;
             this.DeleteBox.Name = "DeleteBox";
-            this.DeleteBox.Size = new System.Drawing.Size(165, 39);
+            this.DeleteBox.Size = new System.Drawing.Size(191, 39);
             this.DeleteBox.TabIndex = 21;
             this.DeleteBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DeleteBox_KeyPress);
             // 
@@ -118,7 +188,7 @@
             this.DeleteLabal.AutoSize = true;
             this.DeleteLabal.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteLabal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.DeleteLabal.Location = new System.Drawing.Point(67, 0);
+            this.DeleteLabal.Location = new System.Drawing.Point(25, 22);
             this.DeleteLabal.Name = "DeleteLabal";
             this.DeleteLabal.Size = new System.Drawing.Size(231, 41);
             this.DeleteLabal.TabIndex = 16;
@@ -129,7 +199,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(39, 59);
+            this.label1.Location = new System.Drawing.Point(26, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 31);
             this.label1.TabIndex = 22;
@@ -143,7 +213,7 @@
             this.Loadbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Loadbutton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loadbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.Loadbutton.Location = new System.Drawing.Point(828, 710);
+            this.Loadbutton.Location = new System.Drawing.Point(1089, 723);
             this.Loadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Loadbutton.Name = "Loadbutton";
             this.Loadbutton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -158,11 +228,11 @@
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.PasswordLabel.Location = new System.Drawing.Point(366, 169);
+            this.PasswordLabel.Location = new System.Drawing.Point(594, 172);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(240, 45);
+            this.PasswordLabel.Size = new System.Drawing.Size(348, 45);
             this.PasswordLabel.TabIndex = 30;
-            this.PasswordLabel.Text = "Your requests:";
+            this.PasswordLabel.Text = " Completed requests:";
             // 
             // dataGridView1
             // 
@@ -171,12 +241,12 @@
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(4)))), ((int)(((byte)(22)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 243);
+            this.dataGridView1.Location = new System.Drawing.Point(340, 241);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(782, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 331);
             this.dataGridView1.TabIndex = 29;
             // 
             // BackButton
@@ -187,7 +257,7 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.BackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.BackButton.Location = new System.Drawing.Point(25, 710);
+            this.BackButton.Location = new System.Drawing.Point(12, 723);
             this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(124, 39);
@@ -207,7 +277,7 @@
             this.titel.Location = new System.Drawing.Point(0, 0);
             this.titel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.titel.Name = "titel";
-            this.titel.Size = new System.Drawing.Size(979, 148);
+            this.titel.Size = new System.Drawing.Size(1225, 148);
             this.titel.TabIndex = 0;
             this.titel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titel_MouseDown);
             this.titel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titel_MouseMove);
@@ -241,7 +311,7 @@
             this.closeButton.Font = new System.Drawing.Font("High Tower Text", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.closeButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.closeButton.Location = new System.Drawing.Point(944, 0);
+            this.closeButton.Location = new System.Drawing.Point(1190, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(35, 32);
             this.closeButton.TabIndex = 1;
@@ -256,24 +326,27 @@
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Stencil", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.WelcomeLabel.Location = new System.Drawing.Point(361, 44);
+            this.WelcomeLabel.Location = new System.Drawing.Point(467, 41);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.Size = new System.Drawing.Size(278, 68);
             this.WelcomeLabel.TabIndex = 9;
             this.WelcomeLabel.Text = "History";
             // 
-            // CustomerHistory
+            // EmployeeHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 771);
+            this.ClientSize = new System.Drawing.Size(1225, 773);
             this.Controls.Add(this.MainPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CustomerHistory";
+            this.Name = "EmployeeHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerHistory";
+            this.Text = "Form1";
             this.MainPage.ResumeLayout(false);
             this.MainPage.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PanelForDeleting.ResumeLayout(false);
             this.PanelForDeleting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -287,6 +360,11 @@
         #endregion
 
         private System.Windows.Forms.Panel MainPage;
+        private System.Windows.Forms.Panel PanelForDeleting;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.TextBox DeleteBox;
+        private System.Windows.Forms.Label DeleteLabal;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Loadbutton;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -296,10 +374,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label WelcomeLabel;
-        private System.Windows.Forms.Panel PanelForDeleting;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.TextBox DeleteBox;
-        private System.Windows.Forms.Label DeleteLabal;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox SearchField;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
