@@ -254,5 +254,12 @@ namespace FreightTransportation
             EmployeeHistory history = new EmployeeHistory(UserName);
             history.Show();
         }
+
+        private void PaymentButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DriverPayment driverPayment = new DriverPayment(UserName);
+            driverPayment.Show();
+        }
     }
 }

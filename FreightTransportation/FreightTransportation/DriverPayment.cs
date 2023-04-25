@@ -1,5 +1,5 @@
-﻿using FreightTransportation.WorkWithDB;
-using System;
+﻿using System;
+using FreightTransportation.WorkWithDB;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class EmployeeHistory : Form
+    public partial class DriverPayment : Form
     {
         string UserName;
-        public EmployeeHistory(string userName)
+        public DriverPayment(string userName)
         {
             InitializeComponent();
             UserName = userName;
@@ -30,12 +30,16 @@ namespace FreightTransportation
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
         {
             closeButton.ForeColor = Color.Red;
+        }
+
+        private void closeButton_MouseLeave(object sender, EventArgs e)
+        {
+            closeButton.ForeColor = Color.White;
         }
 
         Point lastPoint;
@@ -73,8 +77,8 @@ namespace FreightTransportation
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EmployeeMainPage mainPage = new EmployeeMainPage(UserName);
-            mainPage.Show();
+            EmployeeMainPage employeeMainPage = new EmployeeMainPage(UserName);
+            employeeMainPage.Show();
         }
 
         private void DeleteBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,8 +101,8 @@ namespace FreightTransportation
             try
             {
                 BindingSource bindingSource = new BindingSource();
-                Request request = new Request();
-                bindingSource.DataSource = request.GetCompletedRequests();
+                Driver driver = new Driver();
+                bindingSource.DataSource = driver.GetDriversToPayment();
                 dataGridView1.DataSource = bindingSource;
             }
             catch
@@ -116,95 +120,58 @@ namespace FreightTransportation
             }
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void OKButton_Click(object sender, EventArgs e)
         {
-            if (DeleteBox.Text == string.Empty)
+            string id = IDBox.Text;
+            if (id == string.Empty)
             {
-                DeleteBox.BackColor = Color.IndianRed;
+                IDBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Fill in the field");
                 return;
             }
             else
             {
-                DeleteBox.BackColor = Color.White;
+                IDBox.BackColor = Color.White;
             }
 
             int result;
             try
             {
-                result = int.Parse(DeleteBox.Text);
-                DeleteBox.BackColor = Color.White;
+                result = int.Parse(IDBox.Text);
+                IDBox.BackColor = Color.White;
             }
             catch
             {
                 result = -1;
-                DeleteBox.BackColor = Color.IndianRed;
+                IDBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Incorrect data entered");
                 return;
             }
 
-            Request request = new Request();
+            
+            Driver driver = new Driver();
 
-            if (request.IsIdExists_Completed(result))
+            if (driver.IsIdExists(result))
             {
-                DeleteBox.BackColor = Color.White;
+                IDBox.BackColor = Color.White;
             }
             else
             {
-                DeleteBox.BackColor = Color.IndianRed;
+                IDBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Error! No such ID exists");
                 return;
             }
 
-            if (request.Remove(result))
+            if (driver.PaymentToZero(result))
             {
-                DeleteBox.Text = string.Empty;
+                IDBox.BackColor = Color.White;
+                IDBox.Text = string.Empty;
                 if (!Load())
                 {
                     MessageBox.Show("Error loading data");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error! Driver not deleted");
-            }
-
-        }
-
-        private void closeButton_MouseLeave(object sender, EventArgs e)
-        {
-            closeButton.ForeColor = Color.White;
-        }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            string Login = SearchField.Text;
-
-            if (Login == string.Empty)
-            {
-                SearchField.BackColor = Color.IndianRed;
-                MessageBox.Show("Fill in the field");
+                MessageBox.Show("The payment was made successfully");
                 return;
-            }
-            else
-            {
-                SearchField.BackColor = Color.White;
-            }
-
-            try
-            {
-                BindingSource bindingSource = new BindingSource();
-                Request request = new Request();
-                request.SetCustomer(Login);
-
-                bindingSource.DataSource = request.SearchByCustomer();
-
-                dataGridView1.DataSource = bindingSource;
-
-            }
-            catch
-            {
-                MessageBox.Show("Error loading data");
             }
         }
     }

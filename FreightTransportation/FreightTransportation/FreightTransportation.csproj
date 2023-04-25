@@ -86,6 +86,12 @@
     <Compile Include="CustomerMainPage.Designer.cs">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriverPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverPayment.Designer.cs">
+      <DependentUpon>DriverPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriversFullPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverPayment.resx">
+      <DependentUpon>DriverPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriversFullPage.resx">
       <DependentUpon>DriversFullPage.cs</DependentUpon>

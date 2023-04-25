@@ -60,6 +60,14 @@ namespace FreightTransportation.WorkWithDB
             return table;
         }
 
+        public DataTable GetDriversToPayment()
+        {
+            DataTable table = GetDrivers();
+            table.Columns.RemoveAt(2);
+            table.Columns.RemoveAt(4);
+            return table;
+        }
+
         public DataTable GetFreeDrivers()
         {
             DataBase db = new DataBase();
@@ -191,6 +199,27 @@ namespace FreightTransportation.WorkWithDB
             command.Parameters.Add("@money", MySqlDbType.Int32).Value = money;
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
             command.Parameters.Add("@an", MySqlDbType.VarChar).Value = "No";
+
+            db.OpenConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                flag = true;
+
+            db.CloseConnection();
+
+            return flag;
+        }
+
+        public bool PaymentToZero(int _ID)
+        {
+            bool flag = false;
+
+            DataBase db = new DataBase();
+            MySqlCommand command = new MySqlCommand("UPDATE `drivers` SET `payment` = @pay" +
+                " WHERE `id` = @id", db.GetConnection());
+
+            command.Parameters.Add("@pay", MySqlDbType.Int32).Value = 0;
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = _ID;
 
             db.OpenConnection();
 

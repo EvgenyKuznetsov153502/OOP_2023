@@ -48,14 +48,14 @@
             this.routesButton = new System.Windows.Forms.Button();
             this.customersButton = new System.Windows.Forms.Button();
             this.HistoryButton = new System.Windows.Forms.Button();
-            this.DriversButton = new System.Windows.Forms.Button();
+            this.PaymentButton = new System.Windows.Forms.Button();
             this.SignUpCustbutton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.UserNameText = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPage.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,7 +75,7 @@
             this.MainPage.Controls.Add(this.routesButton);
             this.MainPage.Controls.Add(this.customersButton);
             this.MainPage.Controls.Add(this.HistoryButton);
-            this.MainPage.Controls.Add(this.DriversButton);
+            this.MainPage.Controls.Add(this.PaymentButton);
             this.MainPage.Controls.Add(this.SignUpCustbutton);
             this.MainPage.Controls.Add(this.BackButton);
             this.MainPage.Controls.Add(this.panel2);
@@ -331,22 +331,23 @@
             this.HistoryButton.UseVisualStyleBackColor = true;
             this.HistoryButton.Click += new System.EventHandler(this.HistoryButton_Click);
             // 
-            // DriversButton
+            // PaymentButton
             // 
-            this.DriversButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DriversButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
-            this.DriversButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
-            this.DriversButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DriversButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DriversButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
-            this.DriversButton.Location = new System.Drawing.Point(1249, 477);
-            this.DriversButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DriversButton.Name = "DriversButton";
-            this.DriversButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DriversButton.Size = new System.Drawing.Size(146, 40);
-            this.DriversButton.TabIndex = 14;
-            this.DriversButton.Text = "Drivers";
-            this.DriversButton.UseVisualStyleBackColor = true;
+            this.PaymentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PaymentButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(187)))), ((int)(((byte)(170)))));
+            this.PaymentButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(105)))), ((int)(((byte)(85)))));
+            this.PaymentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaymentButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(178)))), ((int)(((byte)(139)))));
+            this.PaymentButton.Location = new System.Drawing.Point(1249, 477);
+            this.PaymentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PaymentButton.Name = "PaymentButton";
+            this.PaymentButton.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PaymentButton.Size = new System.Drawing.Size(146, 40);
+            this.PaymentButton.TabIndex = 14;
+            this.PaymentButton.Text = "Payment";
+            this.PaymentButton.UseVisualStyleBackColor = true;
+            this.PaymentButton.Click += new System.EventHandler(this.PaymentButton_Click);
             // 
             // SignUpCustbutton
             // 
@@ -409,6 +410,16 @@
             this.UserNameText.TabIndex = 17;
             this.UserNameText.Text = "LOGIN";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 95);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
@@ -438,16 +449,6 @@
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
             this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
             // 
             // EmployeeMainPage
             // 
@@ -480,7 +481,7 @@
         private System.Windows.Forms.Label UserNameText;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button DriversButton;
+        private System.Windows.Forms.Button PaymentButton;
         private System.Windows.Forms.Button SignUpCustbutton;
         private System.Windows.Forms.Button routesButton;
         private System.Windows.Forms.Button customersButton;
