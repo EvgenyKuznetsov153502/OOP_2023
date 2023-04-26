@@ -204,5 +204,12 @@ namespace FreightTransportation
             CustomerHistory customerHistory = new CustomerHistory(UserName);
             customerHistory.Show();
         }
+
+        private void SignUpCustbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountForm account = new AccountForm(UserName);
+            account.Show();
+        }
     }
 }

@@ -365,6 +365,7 @@
             this.SignUpCustbutton.TabIndex = 13;
             this.SignUpCustbutton.Text = "Account";
             this.SignUpCustbutton.UseVisualStyleBackColor = true;
+            this.SignUpCustbutton.Click += new System.EventHandler(this.SignUpCustbutton_Click);
             // 
             // BackButton
             // 

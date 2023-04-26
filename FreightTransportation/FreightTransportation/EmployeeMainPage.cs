@@ -261,5 +261,12 @@ namespace FreightTransportation
             DriverPayment driverPayment = new DriverPayment(UserName);
             driverPayment.Show();
         }
+
+        private void SignUpCustbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountForm account = new AccountForm(UserName);
+            account.Show();
+        }
     }
 }

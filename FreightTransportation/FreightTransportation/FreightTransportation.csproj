@@ -86,6 +86,12 @@
     <Compile Include="CustomerMainPage.Designer.cs">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForm.Designer.cs">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriverPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="DriversFullPage.Designer.cs">
       <DependentUpon>DriversFullPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeMainPage.cs">
       <SubType>Form</SubType>
@@ -169,11 +181,17 @@
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForm.resx">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriverPayment.resx">
       <DependentUpon>DriverPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriversFullPage.resx">
       <DependentUpon>DriversFullPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeMainPage.resx">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>

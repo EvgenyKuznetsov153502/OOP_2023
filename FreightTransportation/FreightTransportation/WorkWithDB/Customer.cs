@@ -71,12 +71,5 @@ namespace FreightTransportation.WorkWithDB
             return table;
         }
 
-
-
-
-
-
-
-
     }
 }
