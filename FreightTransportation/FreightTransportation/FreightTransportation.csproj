@@ -62,11 +62,41 @@
     <Compile Include="AdminMainPage.Designer.cs">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompletionTransportationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletionTransportationForm.Designer.cs">
+      <DependentUpon>CompletionTransportationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHistory.Designer.cs">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerListForm.Designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerMainPage.Designer.cs">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForm.Designer.cs">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverPayment.Designer.cs">
+      <DependentUpon>DriverPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="DriversFullPage.cs">
       <SubType>Form</SubType>
@@ -74,12 +104,25 @@
     <Compile Include="DriversFullPage.Designer.cs">
       <DependentUpon>DriversFullPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeMainPage.Designer.cs">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeHistory.Designer.cs">
+      <DependentUpon>EmployeeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithDB\Request.cs" />
     <Compile Include="RoutesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +135,7 @@
     <Compile Include="UniqueCodePage.Designer.cs">
       <DependentUpon>UniqueCodePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkWithDB\Customer.cs" />
     <Compile Include="WorkWithDB\DataBase.cs" />
     <Compile Include="Entrance\Login.cs" />
     <Compile Include="LoginForm1.cs">
@@ -125,14 +169,35 @@
     <EmbeddedResource Include="AdminMainPage.resx">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompletionTransportationForm.resx">
+      <DependentUpon>CompletionTransportationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHistory.resx">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMainPage.resx">
       <DependentUpon>CustomerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForm.resx">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverPayment.resx">
+      <DependentUpon>DriverPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriversFullPage.resx">
       <DependentUpon>DriversFullPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeMainPage.resx">
       <DependentUpon>EmployeeMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHistory.resx">
+      <DependentUpon>EmployeeHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.cs</DependentUpon>
@@ -174,6 +239,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\kisspng-computer-icons-user-profile-password-login-end-user-5b55c605753eb6.8354409015323479094803.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,34 +1,30 @@
-﻿using FreightTransportation.WorkWithDB;
-using System;
+﻿using System;
+using FreightTransportation.WorkWithDB;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class CustomerMainPage : Form
+    public partial class DriverPayment : Form
     {
-        private string UserName;
-
-        public CustomerMainPage(string name)
+        string UserName;
+        public DriverPayment(string userName)
         {
             InitializeComponent();
-            UserName = name;
-            UserNameText.Text = name;
+            UserName = userName;
+            UserNameText.Text = userName;
             dataGridView1.AutoResizeColumns(
-                    DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                   DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             if (!Load())
             {
                 MessageBox.Show("Error loading data");
             }
-            dateTimeLoad.MinDate = DateTime.Now;
-            dateTimeUnload.MinDate = DateTime.Now;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -47,6 +43,7 @@ namespace FreightTransportation
         }
 
         Point lastPoint;
+
         private void MainPage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -61,8 +58,8 @@ namespace FreightTransportation
             lastPoint = new Point(e.X, e.Y);
         }
 
-
         Point lastPoint2;
+
         private void titel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -80,8 +77,22 @@ namespace FreightTransportation
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm1 loginForm = new LoginForm1();
-            loginForm.Show();
+            EmployeeMainPage employeeMainPage = new EmployeeMainPage(UserName);
+            employeeMainPage.Show();
+        }
+
+        private void DeleteBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0') && e.KeyChar <= '9')
+            {
+                return;
+            }
+
+            if (Char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
         }
 
         private new bool Load()
@@ -90,8 +101,8 @@ namespace FreightTransportation
             try
             {
                 BindingSource bindingSource = new BindingSource();
-                Route route = new Route();
-                bindingSource.DataSource = route.GetRoutesForCust();
+                Driver driver = new Driver();
+                bindingSource.DataSource = driver.GetDriversToPayment();
                 dataGridView1.DataSource = bindingSource;
             }
             catch
@@ -109,26 +120,10 @@ namespace FreightTransportation
             }
         }
 
-        private void DeleteBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= '0') && e.KeyChar <= '9')
-            {
-                return;
-            }
-
-            if (Char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-            e.Handled = true;
-        }
-
-        private void SendButton_Click(object sender, EventArgs e)
+        private void OKButton_Click(object sender, EventArgs e)
         {
             string id = IDBox.Text;
-            DateTime date_load = dateTimeLoad.Value.Date;
-            DateTime date_unload = dateTimeUnload.Value.Date;
-            if(id == string.Empty)
+            if (id == string.Empty)
             {
                 IDBox.BackColor = Color.IndianRed;
                 MessageBox.Show("Fill in the field");
@@ -142,8 +137,8 @@ namespace FreightTransportation
             int result;
             try
             {
-               result = int.Parse(IDBox.Text);
-               IDBox.BackColor = Color.White;
+                result = int.Parse(IDBox.Text);
+                IDBox.BackColor = Color.White;
             }
             catch
             {
@@ -153,9 +148,10 @@ namespace FreightTransportation
                 return;
             }
 
-            Route route = new Route();
+            
+            Driver driver = new Driver();
 
-            if (route.IsIdExists(result))
+            if (driver.IsIdExists(result))
             {
                 IDBox.BackColor = Color.White;
             }
@@ -166,50 +162,17 @@ namespace FreightTransportation
                 return;
             }
 
-            int compare = date_unload.CompareTo(date_load);
-            if (compare < 0)
+            if (driver.PaymentToZero(result))
             {
-                MessageBox.Show("The unloading date can't be earlier than the loading date");
-                return;
-            }
-
-            string route_name = route.GetRouteName(result);
-            string load = date_load.ToShortDateString();
-            string unload = date_unload.ToShortDateString();
-
-            Request request = new Request(route_name, load, unload, UserName, "in processing");
-
-            if (request.IsRequestExists())
-            {
-                MessageBox.Show("Such a request already exists");
-                return;
-            }
-
-            if (request.SendRequest())
-            {
+                IDBox.BackColor = Color.White;
                 IDBox.Text = string.Empty;
-                dateTimeLoad.Value = dateTimeLoad.MinDate;
-                dateTimeUnload.Value = dateTimeUnload.MinDate;
-                MessageBox.Show("The request has been sent successfully");
+                if (!Load())
+                {
+                    MessageBox.Show("Error loading data");
+                }
+                MessageBox.Show("The payment was made successfully");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Error! Request not sented");
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CustomerHistory customerHistory = new CustomerHistory(UserName);
-            customerHistory.Show();
-        }
-
-        private void SignUpCustbutton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AccountForm account = new AccountForm(UserName);
-            account.Show();
         }
     }
 }

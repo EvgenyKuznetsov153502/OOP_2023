@@ -51,10 +51,10 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.Loadbutton = new System.Windows.Forms.Button();
             this.titel = new System.Windows.Forms.Panel();
-            this.UserNameText = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UserNameText = new System.Windows.Forms.Label();
             this.MainPage.SuspendLayout();
             this.PanelForDeleting.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -350,27 +350,6 @@
             this.titel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titel_MouseDown);
             this.titel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titel_MouseMove);
             // 
-            // UserNameText
-            // 
-            this.UserNameText.AutoSize = true;
-            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.UserNameText.Location = new System.Drawing.Point(63, 100);
-            this.UserNameText.Name = "UserNameText";
-            this.UserNameText.Size = new System.Drawing.Size(102, 38);
-            this.UserNameText.TabIndex = 15;
-            this.UserNameText.Text = "LOGIN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // closeButton
             // 
             this.closeButton.AutoSize = true;
@@ -399,6 +378,27 @@
             this.WelcomeLabel.Size = new System.Drawing.Size(249, 68);
             this.WelcomeLabel.TabIndex = 9;
             this.WelcomeLabel.Text = "Routes";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // UserNameText
+            // 
+            this.UserNameText.AutoSize = true;
+            this.UserNameText.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.UserNameText.Location = new System.Drawing.Point(63, 100);
+            this.UserNameText.Name = "UserNameText";
+            this.UserNameText.Size = new System.Drawing.Size(102, 38);
+            this.UserNameText.TabIndex = 15;
+            this.UserNameText.Text = "LOGIN";
             // 
             // RoutesForm
             // 
@@ -430,8 +430,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button Loadbutton;
         private System.Windows.Forms.Panel titel;
-        private System.Windows.Forms.Label UserNameText;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -450,5 +448,7 @@
         private System.Windows.Forms.TextBox DeleteBox;
         private System.Windows.Forms.Label DeleteLabal;
         private System.Windows.Forms.Label IDlabel;
+        private System.Windows.Forms.Label UserNameText;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

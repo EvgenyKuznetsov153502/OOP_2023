@@ -1,34 +1,33 @@
-﻿using FreightTransportation.WorkWithDB;
-using System;
+﻿using System;
+using FreightTransportation.WorkWithDB;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FreightTransportation
 {
-    public partial class CustomerMainPage : Form
+    public partial class CompletionTransportationForm : Form
     {
-        private string UserName;
-
-        public CustomerMainPage(string name)
+        string Username;
+        public CompletionTransportationForm(string username)
         {
             InitializeComponent();
-            UserName = name;
-            UserNameText.Text = name;
+            Username = username;
+            UserNameText.Text = Username;
+            Award.Text = "0";
             dataGridView1.AutoResizeColumns(
-                    DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                   DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+
             if (!Load())
             {
                 MessageBox.Show("Error loading data");
             }
-            dateTimeLoad.MinDate = DateTime.Now;
-            dateTimeUnload.MinDate = DateTime.Now;
+            
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -47,6 +46,7 @@ namespace FreightTransportation
         }
 
         Point lastPoint;
+
         private void MainPage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -60,8 +60,6 @@ namespace FreightTransportation
         {
             lastPoint = new Point(e.X, e.Y);
         }
-
-
         Point lastPoint2;
         private void titel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -79,9 +77,9 @@ namespace FreightTransportation
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm1 loginForm = new LoginForm1();
-            loginForm.Show();
+            this.Hide(); ;
+            EmployeeMainPage mainPage = new EmployeeMainPage(Username);
+            mainPage.Show();
         }
 
         private new bool Load()
@@ -90,8 +88,8 @@ namespace FreightTransportation
             try
             {
                 BindingSource bindingSource = new BindingSource();
-                Route route = new Route();
-                bindingSource.DataSource = route.GetRoutesForCust();
+                Request request = new Request();
+                bindingSource.DataSource = request.GetApprovedRequests();
                 dataGridView1.DataSource = bindingSource;
             }
             catch
@@ -123,27 +121,37 @@ namespace FreightTransportation
             e.Handled = true;
         }
 
-        private void SendButton_Click(object sender, EventArgs e)
+        private void СompleteButton_Click(object sender, EventArgs e)
         {
-            string id = IDBox.Text;
-            DateTime date_load = dateTimeLoad.Value.Date;
-            DateTime date_unload = dateTimeUnload.Value.Date;
-            if(id == string.Empty)
+            bool IsEmpty = true;
+
+            void CheckEmpty(TextBox field)
             {
-                IDBox.BackColor = Color.IndianRed;
-                MessageBox.Show("Fill in the field");
-                return;
+                if (field.Text == string.Empty)
+                {
+                    IsEmpty = false;
+                    field.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    field.BackColor = Color.White;
+                }
+
             }
-            else
+            CheckEmpty(IDBox);
+            CheckEmpty(Award);
+            
+            if (!IsEmpty)
             {
-                IDBox.BackColor = Color.White;
+                MessageBox.Show("Fill in all the fields");
+                return;
             }
 
             int result;
             try
             {
-               result = int.Parse(IDBox.Text);
-               IDBox.BackColor = Color.White;
+                result = int.Parse(IDBox.Text);
+                IDBox.BackColor = Color.White;
             }
             catch
             {
@@ -153,9 +161,24 @@ namespace FreightTransportation
                 return;
             }
 
-            Route route = new Route();
+            int AwardSum;
+            try
+            {
+                AwardSum = int.Parse(Award.Text);
+                Award.BackColor = Color.White;
+            }
+            catch
+            {
+                AwardSum = -1;
+                Award.BackColor = Color.IndianRed;
+                MessageBox.Show("Incorrect data entered");
+                return;
+            }
 
-            if (route.IsIdExists(result))
+
+            Request request = new Request();
+
+            if (request.IsIdExists_Approved(result))
             {
                 IDBox.BackColor = Color.White;
             }
@@ -166,50 +189,65 @@ namespace FreightTransportation
                 return;
             }
 
-            int compare = date_unload.CompareTo(date_load);
-            if (compare < 0)
+            string route;
+            int payment;
+            string driverName;
+
+            try
             {
-                MessageBox.Show("The unloading date can't be earlier than the loading date");
+                route = request.GetRoute(result);
+                payment = new Route().GetPayment(route);
+                AwardSum += payment;
+                driverName = request.GetDriver(result);
+                //MessageBox.Show(AwardSum.ToString());
+                //MessageBox.Show(driver.ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Error! Request not processed.");
                 return;
             }
 
-            string route_name = route.GetRouteName(result);
-            string load = date_load.ToShortDateString();
-            string unload = date_unload.ToShortDateString();
+            Driver driver = new Driver(driverName);
 
-            Request request = new Request(route_name, load, unload, UserName, "in processing");
-
-            if (request.IsRequestExists())
+            if (!driver.Payment(AwardSum))
             {
-                MessageBox.Show("Such a request already exists");
+                MessageBox.Show("Error! Request not processed.");
                 return;
             }
 
-            if (request.SendRequest())
+            if (!request.ChangeStatusToComplete(result))
             {
-                IDBox.Text = string.Empty;
-                dateTimeLoad.Value = dateTimeLoad.MinDate;
-                dateTimeUnload.Value = dateTimeUnload.MinDate;
-                MessageBox.Show("The request has been sent successfully");
+                MessageBox.Show("Error! Request not processed.");
+                return;
             }
-            else
+
+            IDBox.Text = string.Empty;
+            Award.Text = "0";
+
+            if (!Load())
             {
-                MessageBox.Show("Error! Request not sented");
+                MessageBox.Show("Error loading data");
             }
+
+            MessageBox.Show("Transportation completed successfully");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CustomerHistory customerHistory = new CustomerHistory(UserName);
-            customerHistory.Show();
-        }
+        
 
-        private void SignUpCustbutton_Click(object sender, EventArgs e)
+        private void Award_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.Hide();
-            AccountForm account = new AccountForm(UserName);
-            account.Show();
+            if ((e.KeyChar >= '0') && e.KeyChar <= '9')
+            {
+                return;
+            }
+
+            if (Char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

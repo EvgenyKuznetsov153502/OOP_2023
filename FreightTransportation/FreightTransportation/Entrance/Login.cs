@@ -23,6 +23,11 @@ namespace FreightTransportation
             Password= password;
         }
 
+        public void SetLogin(string username)
+        {
+            UserName= username;
+        }
+
         public bool SignIn()
         {
             DataBase db = new DataBase();
